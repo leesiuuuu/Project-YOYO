@@ -8,6 +8,8 @@ public class SimplePlayerMove : MonoBehaviourPunCallbacks
 	public SpriteRenderer SR;
 	public Rigidbody2D RB;
 	public Text Name;
+	public GameObject Camera;
+	public GameObject cine;
 	private bool isGround = false;
 
 	private bool isJump = false;
@@ -18,7 +20,8 @@ public class SimplePlayerMove : MonoBehaviourPunCallbacks
 	{
 		if (PV.IsMine)
 		{
-			PV.Owner.NickName = "NickName" + Random.Range(1000, 5000);
+			Camera.SetActive(true);
+			cine.SetActive(true);
 			Name.color = Color.cyan;
 			PV.RPC("SetNickName", RpcTarget.AllBuffered, PhotonNetwork.LocalPlayer.NickName);
 		}
