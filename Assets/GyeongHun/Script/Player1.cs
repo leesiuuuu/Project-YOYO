@@ -7,12 +7,14 @@ public class Player1 : MonoBehaviour
     Rigidbody2D rigid;
 
     PushGlove glove;
+    GameObject _glove;
 
     public float moveSpeed = 4f;
     public float x;
 
     public bool jumpAble = true;
     public bool Push;
+    public bool Grab;
 
     public bool flip;
 
@@ -24,12 +26,41 @@ public class Player1 : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        _glove = GameObject.Find("PushGlove");
         glove = GetComponentInChildren<PushGlove>();
     }
 
     private void Update()
     {
-        glove.player1PushPower = pushCharge;
+        if (_glove.active)
+        {
+            glove.player1PushPower = pushCharge;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                isCharging = true;
+                pushCharge = 0f;
+            }
+            if (Input.GetKey(KeyCode.E) && isCharging)
+            {
+                pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
+                if (pushCharge > maxPushCharge)
+                {
+                    pushCharge = maxPushCharge;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.E) && isCharging)
+            {
+                isCharging = false;
+                Push = true;
+            }
+        }
+
+        if(Input.GetKey(KeyCode.R) && !Grab)
+        {
+            Grab = true;
+        }
+        
 
         if (Input.GetKeyDown(KeyCode.W) && jumpAble)
         {
@@ -37,24 +68,7 @@ public class Player1 : MonoBehaviour
             jumpAble = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            isCharging = true;
-            pushCharge = 0f;
-        }
-        if (Input.GetKey(KeyCode.E) && isCharging)
-        {
-            pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
-            if (pushCharge > maxPushCharge)
-            {
-                pushCharge = maxPushCharge;
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.E) && isCharging)
-        {
-            isCharging = false;
-            Push = true;
-        }
+        
     }
 
     private void FixedUpdate()

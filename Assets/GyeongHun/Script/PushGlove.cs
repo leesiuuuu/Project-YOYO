@@ -45,7 +45,7 @@ public class PushGlove : MonoBehaviour
                     {
                         rigid.AddForce(Vector2.left * _Player1PushPower, ForceMode2D.Impulse);
                     }
-                    rigid.AddForce(Vector2.up * _Player1PushPower / 2.9166f, ForceMode2D.Impulse);
+                    rigid.AddForce(Vector2.up * _Player1PushPower / 2f, ForceMode2D.Impulse);
                     player1.pushCharge = 0f;
                     StartCoroutine(PushCooldownPlayer1());
                 }
