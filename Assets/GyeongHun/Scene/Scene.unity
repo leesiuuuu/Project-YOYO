@@ -587,6 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6584724b1bb43014d9073495fa55829f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  addPos: {x: 0, y: 3, z: 0}
   object1: {fileID: 0}
   object2: {fileID: 0}
   margin: 2
@@ -1259,6 +1260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   P1ChargeGage: {fileID: 0}
   P1Gage: {fileID: 0}
+  P2ChargeGage: {fileID: 0}
+  P2Gage: {fileID: 0}
 --- !u!1 &1829131162
 GameObject:
   m_ObjectHideFlags: 0
