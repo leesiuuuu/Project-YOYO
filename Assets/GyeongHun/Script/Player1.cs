@@ -6,36 +6,53 @@ public class Player1 : MonoBehaviour
 {
     Rigidbody2D rigid;
 
-    public float moveSpeed;
+    PushGlove glove;
 
+    public float moveSpeed = 4f;
     public float x;
 
-    public bool jumpAble;
+    public bool jumpAble = true;
     public bool Push;
 
     public bool flip;
 
+    public float pushCharge = 0f; 
+    public float maxPushCharge = 35f;
+    public float chargeTime = 1f; 
+    private bool isCharging = false;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-    }
-
-    private void Start()
-    {
-        moveSpeed = 4f;
-        jumpAble = true;
+        glove = GetComponentInChildren<PushGlove>();
     }
 
     private void Update()
     {
+        glove.player1PushPower = pushCharge;
+
         if (Input.GetKeyDown(KeyCode.W) && jumpAble)
         {
             rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
             jumpAble = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.E) && !Push)
+        if (Input.GetKeyDown(KeyCode.E))
         {
+            isCharging = true;
+            pushCharge = 0f;
+        }
+        if (Input.GetKey(KeyCode.E) && isCharging)
+        {
+            pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
+            if (pushCharge > maxPushCharge)
+            {
+                pushCharge = maxPushCharge;
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.E) && isCharging)
+        {
+            isCharging = false;
             Push = true;
         }
     }
@@ -43,7 +60,6 @@ public class Player1 : MonoBehaviour
     private void FixedUpdate()
     {
         x = Input.GetAxisRaw("Horizontal1");
-
         if (x > 0 && flip)
         {
             Flip();
@@ -61,8 +77,8 @@ public class Player1 : MonoBehaviour
         {
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
         }
-
     }
+
     public void Flip()
     {
         flip = !flip;

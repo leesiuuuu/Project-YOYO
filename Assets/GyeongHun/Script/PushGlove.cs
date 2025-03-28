@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PushGlove : MonoBehaviour
 {
-    public float PushPower
+    public float player1PushPower
     {
-        get => _PushPower;
-        set => _PushPower = value;
+        get => _Player1PushPower;
+        set => _Player1PushPower = value;
     }
-    [SerializeField] private float _PushPower;
+    [SerializeField] private float _Player1PushPower;
 
-    private bool _canPushPlayer1 = true;
-    private bool _canPushPlayer2 = true;
+    public float player2PushPower
+    {
+        get => _Player2PushPower;
+        set => _Player2PushPower = value;
+    }
+    [SerializeField] private float _Player2PushPower;
+
+    public bool _canPushPlayer1 = true;
+    public bool _canPushPlayer2 = true;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -31,14 +38,15 @@ public class PushGlove : MonoBehaviour
                 {
                     if (gameObject.transform.position.x < collision.gameObject.transform.position.x)
                     {
-                        rigid.AddForce(Vector2.right * _PushPower, ForceMode2D.Impulse);
+                        rigid.AddForce(Vector2.right * _Player1PushPower, ForceMode2D.Impulse);
                         Debug.Log("Push");
                     }
                     else if (gameObject.transform.position.x > collision.gameObject.transform.position.x)
                     {
-                        rigid.AddForce(Vector2.left * _PushPower, ForceMode2D.Impulse);
+                        rigid.AddForce(Vector2.left * _Player1PushPower, ForceMode2D.Impulse);
                     }
-                    rigid.AddForce(Vector2.up * 12, ForceMode2D.Impulse);
+                    rigid.AddForce(Vector2.up * _Player1PushPower / 2.9166f, ForceMode2D.Impulse);
+                    player1.pushCharge = 0f;
                     StartCoroutine(PushCooldownPlayer1());
                 }
             }
@@ -59,14 +67,15 @@ public class PushGlove : MonoBehaviour
                 {
                     if (gameObject.transform.position.x < collision.gameObject.transform.position.x)
                     {
-                        rigid.AddForce(Vector2.right * _PushPower, ForceMode2D.Impulse);
+                        rigid.AddForce(Vector2.right * _Player2PushPower, ForceMode2D.Impulse);
                         Debug.Log("Push");
                     }
                     else if (gameObject.transform.position.x > collision.gameObject.transform.position.x)
                     {
-                        rigid.AddForce(Vector2.left * _PushPower, ForceMode2D.Impulse);
+                        rigid.AddForce(Vector2.left * _Player2PushPower, ForceMode2D.Impulse);
                     }
-                    rigid.AddForce(Vector2.up * 12, ForceMode2D.Impulse);
+                    rigid.AddForce(Vector2.up * _Player2PushPower / 2.9166f, ForceMode2D.Impulse);
+                    player2.pushCharge = 0f;
                     StartCoroutine(PushCooldownPlayer2());
                 }
             }
@@ -76,14 +85,14 @@ public class PushGlove : MonoBehaviour
     private IEnumerator PushCooldownPlayer1()
     {
         _canPushPlayer1 = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         _canPushPlayer1 = true;
     }
 
     private IEnumerator PushCooldownPlayer2()
     {
         _canPushPlayer2 = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         _canPushPlayer2 = true;
     }
 }
