@@ -64,16 +64,19 @@ public class Player2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        x = Input.GetAxisRaw("Horizontal2");
-        if (x > 0 && flip)
+        if (!Grab)
         {
-            Flip();
+            x = Input.GetAxisRaw("Horizontal2");
+            if (x > 0 && flip)
+            {
+                Flip();
+            }
+            else if (x < 0 && !flip)
+            {
+                Flip();
+            }
         }
-        else if (x < 0 && !flip)
-        {
-            Flip();
-        }
-
+        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(moveSpeed * -1f * Time.deltaTime, 0, 0);

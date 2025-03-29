@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 492286933}
   m_Layer: 0
   m_Name: Grab
-  m_TagString: Untagged
+  m_TagString: Player2Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 508229979}
   m_Layer: 0
   m_Name: Grab
-  m_TagString: Untagged
+  m_TagString: Player1Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2169,6 +2169,8 @@ MonoBehaviour:
   P2GrabRange: {fileID: 0}
   PushGlove1: {fileID: 0}
   PushGlove2: {fileID: 0}
+  Player1Grab: {fileID: 0}
+  Player2Grab: {fileID: 0}
 --- !u!1 &1826786614
 GameObject:
   m_ObjectHideFlags: 0

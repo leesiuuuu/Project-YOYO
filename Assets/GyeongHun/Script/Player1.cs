@@ -73,14 +73,17 @@ public class Player1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        x = Input.GetAxisRaw("Horizontal1");
-        if (x > 0 && flip)
+        if(!Grab)
         {
-            Flip();
-        }
-        else if (x < 0 && !flip)
-        {
-            Flip();
+            x = Input.GetAxisRaw("Horizontal1");
+            if (x > 0 && flip)
+            {
+                Flip();
+            }
+            else if (x < 0 && !flip)
+            {
+                Flip();
+            }
         }
 
         if (Input.GetKey(KeyCode.A))

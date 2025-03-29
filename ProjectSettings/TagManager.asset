@@ -9,6 +9,8 @@ TagManager:
   - Player2
   - Player1Glove
   - Player2Glove
+  - Player1Grab
+  - Player2Grab
   layers:
   - Default
   - TransparentFX
