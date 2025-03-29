@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Player1
   - Player2
+  - Player1Glove
+  - Player2Glove
   layers:
   - Default
   - TransparentFX

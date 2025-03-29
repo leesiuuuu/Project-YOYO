@@ -1892,6 +1892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PushGlove
       objectReference: {fileID: 0}
+    - target: {fileID: 7376004078352440982, guid: 0d8ac03a3370fee419935aa45e21b454, type: 3}
+      propertyPath: m_TagString
+      value: Player2Glove
+      objectReference: {fileID: 0}
     - target: {fileID: 8688612137460036638, guid: 0d8ac03a3370fee419935aa45e21b454, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -2163,6 +2167,8 @@ MonoBehaviour:
   P2Gage: {fileID: 0}
   P1GrabRange: {fileID: 0}
   P2GrabRange: {fileID: 0}
+  PushGlove1: {fileID: 0}
+  PushGlove2: {fileID: 0}
 --- !u!1 &1826786614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,6 +2716,10 @@ PrefabInstance:
     - target: {fileID: 7376004078352440982, guid: 0d8ac03a3370fee419935aa45e21b454, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376004078352440982, guid: 0d8ac03a3370fee419935aa45e21b454, type: 3}
+      propertyPath: m_TagString
+      value: Player1Glove
       objectReference: {fileID: 0}
     - target: {fileID: 8688612137460036638, guid: 0d8ac03a3370fee419935aa45e21b454, type: 3}
       propertyPath: m_SortingOrder
