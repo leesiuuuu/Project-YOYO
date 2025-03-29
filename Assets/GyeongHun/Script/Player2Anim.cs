@@ -6,6 +6,7 @@ public class Player2Anim : MonoBehaviour
 {
     Animator anim;
     Player2 player2;
+    bool playanim;
 
     private void Awake()
     {
@@ -17,24 +18,28 @@ public class Player2Anim : MonoBehaviour
     {
         AnimatorStateInfo stateinfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (player2.Push)
+        if (player2.Push && !playanim)
         {
             anim.Play("PushGlovePlayer2");
+            playanim = true;
         }
 
         if (stateinfo.IsName("PushGlovePlayer2") && stateinfo.normalizedTime > 0.8f)
         {
             player2.Push = false;
+            playanim = false;
         }
 
-        if (player2.Grab)
+        if (player2.Grab && !playanim)
         {
             anim.Play("Player2Grab");
+            playanim = true;
         }
 
         if(stateinfo.IsName("Player2Grab") && stateinfo.normalizedTime > 0.8f)
         {
             player2.Grab = false;
+            playanim = false;
         }
     }
 }
