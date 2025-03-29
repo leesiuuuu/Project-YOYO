@@ -11,7 +11,8 @@ public class Player2 : MonoBehaviour
     public float x;
 
     public bool jumpAble = true;
-    public bool Push;  
+    public bool Push;
+    public bool Grab;
 
     public bool flip;
 
@@ -53,6 +54,11 @@ public class Player2 : MonoBehaviour
         {
             isCharging = false;
             Push = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Period) && !Grab)
+        {
+            Grab = true;
         }
     }
 

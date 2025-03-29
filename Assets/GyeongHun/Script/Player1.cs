@@ -56,7 +56,7 @@ public class Player1 : MonoBehaviour
             }
         }
 
-        if(Input.GetKey(KeyCode.R) && !Grab)
+        if(Input.GetKeyUp(KeyCode.R) && !Grab)
         {
             Grab = true;
         }

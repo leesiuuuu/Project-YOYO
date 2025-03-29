@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class ChargeUI : MonoBehaviour
     public Image P2ChargeGage;
     public Image P2Gage;
 
+    public GameObject P1GrabRange;
+    public GameObject P2GrabRange;
+
     Vector3 offset = new Vector3(0, 120, 0);
     private void Awake()
     {
@@ -25,6 +29,9 @@ public class ChargeUI : MonoBehaviour
 
         P2ChargeGage = GameObject.Find("P2ChargeGage").GetComponent<Image>();
         P2Gage = GameObject.Find("P2Gage").GetComponent<Image>();
+
+        P1GrabRange = GameObject.Find("P1GrabRange");
+        P2GrabRange = GameObject.Find("P2GrabRange");
     }
 
     private void Start()
@@ -35,24 +42,8 @@ public class ChargeUI : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.E))
-        {
-            P1Gage.gameObject.SetActive(true);
-        }
-        else
-        {
-            P1Gage.gameObject.SetActive(false);
-        }
-
-
-        if(Input.GetKey(KeyCode.Slash))
-        {
-            P2Gage.gameObject.SetActive(true);
-        }
-        else
-        {
-            P2Gage.gameObject.SetActive(false);
-        }
+        Player1UI();
+        Player2UI();
 
 
         Vector3 player1Pos = Camera.main.WorldToScreenPoint(player1.transform.position);
@@ -63,5 +54,53 @@ public class ChargeUI : MonoBehaviour
 
         P2Gage.rectTransform.position = player2Pos + offset;
         P2ChargeGage.fillAmount = player2.pushCharge / 35;
+    }
+
+    void Player1UI()
+    {
+        //ÁÖ¸Ô UI
+        if (Input.GetKey(KeyCode.E))
+        {
+            P1Gage.gameObject.SetActive(true);
+        }
+        else
+        {
+            P1Gage.gameObject.SetActive(false);
+        }
+
+        //±×·¦ UI
+        if (Input.GetKey(KeyCode.R))
+        {
+            P1GrabRange.SetActive(true);
+        }
+        else
+        {
+            P1GrabRange.SetActive(false);
+        }
+    }
+
+    void Player2UI()
+    {
+        //ÁÖ¸Ô UI
+        if (Input.GetKey(KeyCode.Slash))
+        {
+            P2Gage.gameObject.SetActive(true);
+        }
+        else
+        {
+            P2Gage.gameObject.SetActive(false);
+        }
+
+
+        //±×·¦ UI
+        if (Input.GetKey(KeyCode.Period))
+        {
+            P2GrabRange.SetActive(true);
+        }
+        else
+        {
+            P2GrabRange.SetActive(false);
+        }
+
     }
 }

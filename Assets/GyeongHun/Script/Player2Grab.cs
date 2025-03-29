@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Grab : MonoBehaviour
+public class Player2Grab : MonoBehaviour
 {
-    Player1 player;
-    Transform player2;
+    Player2 player;
+    Transform player1;
 
     public bool setPosing;
 
     private void Awake()
     {
-        player = GetComponentInParent<Player1>();
-        player2 = GameObject.Find("Player2").GetComponent<Transform>();
+        player = GetComponentInParent<Player2>();
+        player1 = GameObject.Find("Player1").GetComponent<Transform>();
     }
 
     private void Start()
@@ -22,15 +22,15 @@ public class Player1Grab : MonoBehaviour
 
     private void Update()
     {
-        if(Vector2.Distance(player2.gameObject.transform.position, player.transform.position) < 1)
+        if (Vector2.Distance(player1.gameObject.transform.position, player.transform.position) < 1)
         {
-            player.Grab = false;    
+            player.Grab = false;
             setPosing = false;
         }
 
-        if(setPosing)
+        if (setPosing)
         {
-            player2.transform.position = gameObject.transform.position;
+            player1.transform.position = gameObject.transform.position;
         }
         else
         {
@@ -40,9 +40,9 @@ public class Player1Grab : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player2"))
+        if (collision.gameObject.CompareTag("Player1"))
         {
-            if(player.Grab)
+            if (player.Grab)
             {
                 setPosing = true;
             }

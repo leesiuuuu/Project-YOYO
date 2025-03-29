@@ -26,5 +26,15 @@ public class Player2Anim : MonoBehaviour
         {
             player2.Push = false;
         }
+
+        if (player2.Grab)
+        {
+            anim.Play("Player2Grab");
+        }
+
+        if(stateinfo.IsName("Player2Grab") && stateinfo.normalizedTime > 0.8f)
+        {
+            player2.Grab = false;
+        }
     }
 }
