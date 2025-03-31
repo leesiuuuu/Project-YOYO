@@ -1,14 +1,14 @@
-using UnityEngine.InputSystem;
+ï»¿using UnityEngine.InputSystem;
 using UnityEngine;
 
 /// <summary>
-/// Å° ÀÔ·Â¿¡ ´ëÇÑ ¿­°ÅÇüÀÔ´Ï´Ù.
+/// í‚¤ ì…ë ¥ì— ëŒ€í•œ ì—´ê±°í˜•ì…ë‹ˆë‹¤.
 /// 
-/// Left     : ¿ŞÂÊ ÀÌµ¿ ÀÔ·Â
-/// Right    : ¿À¸¥ÂÊ ÀÌµ¿ ÀÔ·Æ
-/// Jump     : Á¡ÇÁÅ° ÀÔ·Â
-/// PushGlove: ¹Ì´Â Àå°© ÀÔ·Â
-/// PullGlove: ´ç±â´Â Àå°© ÀÔ·Â
+/// Left     : ì™¼ìª½ ì´ë™ ì…ë ¥
+/// Right    : ì˜¤ë¥¸ìª½ ì´ë™ ì…ë µ
+/// Jump     : ì í”„í‚¤ ì…ë ¥
+/// PushGlove: ë¯¸ëŠ” ì¥ê°‘ ì…ë ¥
+/// PullGlove: ë‹¹ê¸°ëŠ” ì¥ê°‘ ì…ë ¥
 /// </summary>
 public enum KeyInput
 {
@@ -32,7 +32,7 @@ public static class KeySetting
     {
         if (_inputActions == null)
         {
-            Debug.LogError("InputActionÀÌ ¾øÀ½");
+            Debug.LogError("InputActionì´ ì—†ìŒ");
             return;
         }
 
@@ -41,11 +41,11 @@ public static class KeySetting
         var action = _inputActions.FindAction(actionName);
         if (action == null)
         {
-            Debug.LogError($"KeySetting: {actionName}À» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError($"KeySetting: {actionName}ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             return;
         }
 
         action.ApplyBindingOverride($"{inputType}/{newKey.ToString()}");
-        Debug.Log($"{actionName} Å°°¡ {newKey}·Î º¯°æµÊ");
+        Debug.Log($"{actionName} í‚¤ê°€ {newKey}ë¡œ ë³€ê²½ë¨");
     }
 }
