@@ -7,7 +7,7 @@ using UnityEngine;
 /// 
 /// 코드 설명:
 /// Left     : 왼쪽 이동 입력
-/// Right    : 오른쪽 이동 입렵
+/// Right    : 오른쪽 이동 입력
 /// Jump     : 점프키 입력
 /// PushGlove: 미는 장갑 입력
 /// PullGlove: 당기는 장갑 입력
