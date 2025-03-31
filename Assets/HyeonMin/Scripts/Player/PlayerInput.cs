@@ -25,4 +25,22 @@ public class PlayerInput : MonoBehaviour
 
         }
     }
+
+    public void OnPushGlove(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("PushGlove");
+
+        }
+    }
+
+    public void OnPullGlove(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("PullGlove");
+
+        }
+    }
 }
