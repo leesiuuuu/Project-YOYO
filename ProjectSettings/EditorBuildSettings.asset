@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SiWoo/PlayerMoveTest.unity
-    guid: 3ed1103d54c2ed94f974e96fe30156e5
+    path: Assets/SiWoo/Main.unity
+    guid: 1eda2b7f7b75411499e743df5c7f057e
   m_configObjects: {}
