@@ -22,12 +22,6 @@ public class Player2Grab : MonoBehaviour
 
     private void Update()
     {
-        if (Vector2.Distance(player1.gameObject.transform.position, player.transform.position) < 1)
-        {
-            player.Grab = false;
-            setPosing = false;
-        }
-
         if (setPosing)
         {
             player1.transform.position = gameObject.transform.position;
