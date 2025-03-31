@@ -6,12 +6,15 @@ public class Player2Anim : MonoBehaviour
 {
     Animator anim;
     Player2 player2;
+    Player2Grab grab;
+
     bool playanim;
 
     private void Awake()
     {
         player2 = GetComponent<Player2>();
         anim = GetComponent<Animator>();
+        grab = GetComponentInChildren<Player2Grab>();
     }
 
     private void Update()
@@ -36,10 +39,11 @@ public class Player2Anim : MonoBehaviour
             playanim = true;
         }
 
-        if(stateinfo.IsName("Player2Grab") && stateinfo.normalizedTime > 0.8f)
+        if(stateinfo.IsName("Player2Grab") && stateinfo.normalizedTime > 0.9f)
         {
             player2.Grab = false;
             playanim = false;
+            grab.setPosing = false; 
         }
     }
 }

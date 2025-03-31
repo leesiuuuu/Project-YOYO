@@ -7,6 +7,7 @@ public class Player1Anim : MonoBehaviour
 {
     Animator anim;
     Player1 player1;
+    Player1Grab grab;
 
     bool playanim;
 
@@ -14,6 +15,7 @@ public class Player1Anim : MonoBehaviour
     {
         player1  = GetComponent<Player1>();
         anim = GetComponent<Animator>();    
+        grab = GetComponentInChildren<Player1Grab>();
     }
 
     private void Update()
@@ -38,10 +40,11 @@ public class Player1Anim : MonoBehaviour
             playanim = true;
         }
 
-        if(stateinfo.IsName("Player1Grab") && stateinfo.normalizedTime > 0.8f)
+        if(stateinfo.IsName("Player1Grab") && stateinfo.normalizedTime > 0.9f)
         {
             player1.Grab = false;
             playanim = false;
+            grab.setPosing = false;
         }
     }
 }
