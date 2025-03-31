@@ -41,15 +41,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Platform
-    uniqueID: 4019721353
-    locked: 0
-  - name: Object
-    uniqueID: 4191462845
-    locked: 0
-  - name: Player
-    uniqueID: 3140109709
-    locked: 0
-  - name: UI
-    uniqueID: 1509072753
-    locked: 0
