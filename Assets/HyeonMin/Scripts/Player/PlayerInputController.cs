@@ -15,8 +15,7 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] private InputActionAsset _inputActionAsset;
     private Player _player;
 
-    private Vector2 _moveInput;
-    public Vector2 MoveInput => _moveInput;
+    public Vector2 MoveInput { get; private set; }
 
     [field: Header("Player Action Map"), SerializeField]
     private InputActionMap _currentActionMap;
@@ -24,6 +23,7 @@ public class PlayerInputController : MonoBehaviour
     private void Awake()
     {
         _player = GetComponent<Player>();
+
         KeySetting.Initialize(_inputActionAsset);
     }
 
@@ -41,16 +41,30 @@ public class PlayerInputController : MonoBehaviour
 
         _currentActionMap.Enable();
         Debug.Log(_currentActionMap.name);
+
+        _currentActionMap["Move"].performed      += OnMove;
+        _currentActionMap["Jump"].performed      += OnJump;
+        _currentActionMap["PushGlove"].performed += OnPushGlove;
+        _currentActionMap["PullGlove"].performed += OnPullGlove;
     }
 
     private void OnDisable()
     {
         _currentActionMap?.Disable();
+        _currentActionMap = null;
     }
-
+    float moveDir;
     public void OnMove(InputAction.CallbackContext context)
     {
-        _moveInput = context.ReadValue<Vector2>();
+        MoveInput = context.ReadValue<Vector2>();
+
+        moveDir = MoveInput.x;
+    }
+
+    private void Update()
+    {
+
+        transform.Translate(new Vector3(moveDir * _player.MoveSpeed * Time.deltaTime, 0, 0));
     }
 
     public void OnJump(InputAction.CallbackContext context)
