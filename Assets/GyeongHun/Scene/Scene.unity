@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 698371269}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Grabable
+  m_TagString: interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2414,7 +2414,7 @@ GameObject:
   - component: {fileID: 2100732046}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Grabable
+  m_TagString: interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -33,7 +33,7 @@ public class Player1Grab : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Grabable"))
+        if(collision.gameObject.CompareTag("interactive"))
         {
             if(player.Grab)
             {

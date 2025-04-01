@@ -32,7 +32,7 @@ public class PushGlove : MonoBehaviour
             if (!player1.Push)
                 return;
 
-            if (collision.gameObject.CompareTag("Player2"))
+            if (collision.gameObject.CompareTag("interactive"))
             {
                 if (collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigid))
                 {
@@ -61,7 +61,7 @@ public class PushGlove : MonoBehaviour
             if (!player2.Push)
                 return;
 
-            if (collision.gameObject.CompareTag("Player1"))
+            if (collision.gameObject.CompareTag("interactive"))
             {
                 if (collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigid))
                 {

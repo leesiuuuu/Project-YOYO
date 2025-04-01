@@ -12,6 +12,7 @@ TagManager:
   - Player1Grab
   - Player2Grab
   - Grabable
+  - interactive
   layers:
   - Default
   - TransparentFX
