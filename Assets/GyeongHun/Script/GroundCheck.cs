@@ -7,15 +7,21 @@ public class GroundCheck : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
-        if (gameObject.CompareTag("Player1"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("interactive"))
         {
-                GetComponentInParent<Player1>().jumpAble = true;
+            if(transform.parent.TryGetComponent<Player1>(out Player1 player1))
+            {
+                player1.jumpAble = true;
+            }
         }
 
-        if (gameObject.CompareTag("Player2"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("interactive"))
         {
 
-                GetComponentInParent<Player2>().jumpAble = true;
+            if(transform.parent.TryGetComponent<Player2>(out Player2 player2))
+            {
+                player2.jumpAble = true;                
+            }
         }
     }
 }

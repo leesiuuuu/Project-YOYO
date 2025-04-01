@@ -5,26 +5,27 @@ using UnityEngine;
 public class Player1Grab : MonoBehaviour
 {
     Player1 player;
-    Transform player2;
+    public Transform Target;
 
     public bool setPosing;
+    public bool targetingable;
 
     private void Awake()
     {
         player = GetComponentInParent<Player1>();
-        player2 = GameObject.Find("Player2").GetComponent<Transform>();
     }
 
     private void Start()
     {
         setPosing = false;
+        targetingable = false;
     }
 
     private void Update()
     {
         if(setPosing)
         {
-            player2.transform.position = gameObject.transform.position;
+            Target.transform.position = gameObject.transform.position;
         }
         else
         {
@@ -34,10 +35,15 @@ public class Player1Grab : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player2"))
+        if(collision.gameObject.CompareTag("interactive"))
         {
             if(player.Grab)
             {
+                if (!targetingable)
+                {
+                    Target = collision.gameObject.GetComponent<Transform>();
+                    targetingable = true;
+                }
                 setPosing = true;
             }
         }

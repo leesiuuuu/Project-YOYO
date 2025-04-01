@@ -45,6 +45,7 @@ public class Player1Anim : MonoBehaviour
             player1.Grab = false;
             playanim = false;
             grab.setPosing = false;
+            grab.targetingable = false;
         }
     }
 }
