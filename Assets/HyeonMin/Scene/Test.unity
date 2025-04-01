@@ -238,86 +238,38 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 56934857}
-        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: fb289e2b-bdc3-4869-9c4a-8adffcb2d789
     m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 56934857}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnPullGlove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 56934857}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnPushGlove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4f0d57c6-088c-46b3-8e98-78daba3cf146
-    m_ActionName: Player/Grab[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 56934857}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: b72efa39-ccb2-4fcc-a118-e1858cd615bf
     m_ActionName: Player_1/Jump[/Keyboard/w]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 56934857}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 7a7d79eb-3b89-42b2-adcd-1d0763097ad3
     m_ActionName: Player_2/Move[/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: f787eef1-b7fa-4385-8bd0-a57e3c1308c4
     m_ActionName: Player_2/Jump[/Keyboard/upArrow]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3bfb60f5-9615-44ed-a44c-bfd09ed24f27
+    m_ActionName: Player_1/PushGlove[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 658d24b6-7d8c-414f-abf8-3357d56c2435
+    m_ActionName: Player_1/PullGlove[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b7155cc0-e24f-4b65-a632-432c963e1cee
+    m_ActionName: Player_2/PushGrab[/Keyboard/slash]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a6c7936a-df20-4d19-a946-96efd64a72e1
+    m_ActionName: Player_2/PullGrab[/Keyboard/period]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: PC
   m_DefaultActionMap: Player_1
   m_SplitScreenIndex: -1
@@ -361,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06399bf63290b5347ac05818992c9a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInput: {fileID: -944628639613478452, guid: 86bcf11f061afcf43a51045ff9565a91, type: 3}
+  _inputActionAsset: {fileID: -944628639613478452, guid: 86bcf11f061afcf43a51045ff9565a91, type: 3}
   _currentActionMap:
     m_Name: Current
     m_Id: e8efe9df-d907-4a1b-91f2-37c64ca7f716
@@ -502,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06399bf63290b5347ac05818992c9a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInput: {fileID: -944628639613478452, guid: 86bcf11f061afcf43a51045ff9565a91, type: 3}
+  _inputActionAsset: {fileID: -944628639613478452, guid: 86bcf11f061afcf43a51045ff9565a91, type: 3}
   _currentActionMap:
     m_Name: Current
     m_Id: e8efe9df-d907-4a1b-91f2-37c64ca7f716
@@ -535,86 +487,38 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 236402111}
-        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: fb289e2b-bdc3-4869-9c4a-8adffcb2d789
     m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 236402111}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnPullGlove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 236402111}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnPushGlove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4f0d57c6-088c-46b3-8e98-78daba3cf146
-    m_ActionName: Player/Grab[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 236402111}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: b72efa39-ccb2-4fcc-a118-e1858cd615bf
     m_ActionName: Player_1/Jump[/Keyboard/w]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 236402111}
-        m_TargetAssemblyTypeName: PlayerInputController, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 7a7d79eb-3b89-42b2-adcd-1d0763097ad3
     m_ActionName: Player_2/Move[/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: f787eef1-b7fa-4385-8bd0-a57e3c1308c4
     m_ActionName: Player_2/Jump[/Keyboard/upArrow]
-  m_NeverAutoSwitchControlSchemes: 0
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3bfb60f5-9615-44ed-a44c-bfd09ed24f27
+    m_ActionName: Player_1/PushGlove[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 658d24b6-7d8c-414f-abf8-3357d56c2435
+    m_ActionName: Player_1/PullGlove[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b7155cc0-e24f-4b65-a632-432c963e1cee
+    m_ActionName: Player_2/PushGrab[/Keyboard/slash]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a6c7936a-df20-4d19-a946-96efd64a72e1
+    m_ActionName: Player_2/PullGrab[/Keyboard/period]
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: PC
   m_DefaultActionMap: Player_2
   m_SplitScreenIndex: -1

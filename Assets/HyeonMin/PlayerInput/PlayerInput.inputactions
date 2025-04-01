@@ -11,17 +11,8 @@
                     "id": "fb289e2b-bdc3-4869-9c4a-8adffcb2d789",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Grab",
-                    "type": "Button",
-                    "id": "4f0d57c6-088c-46b3-8e98-78daba3cf146",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
                     "name": "Jump",
@@ -31,13 +22,31 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PushGlove",
+                    "type": "Button",
+                    "id": "3bfb60f5-9615-44ed-a44c-bfd09ed24f27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PullGlove",
+                    "type": "Button",
+                    "id": "658d24b6-7d8c-414f-abf8-3357d56c2435",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "WASD",
+                    "name": "DIrection",
                     "id": "3718b34f-e8a6-464e-a427-4d57af7ad513",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -69,34 +78,34 @@
                 },
                 {
                     "name": "",
-                    "id": "cad229a8-d0f2-47b3-9cd0-d3a67c24ec55",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "045bb7c6-e6ad-4594-a87a-eae34300d69c",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c3cddc42-cd4e-48f8-9cd8-9f510a8ee208",
                     "path": "<Keyboard>/#(W)",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "016b8136-9a06-418e-881a-f535bf6a16f7",
+                    "path": "<Keyboard>/#(E)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PushGlove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f58b16f-1c14-4bb9-aa62-170cbbb29c54",
+                    "path": "<Keyboard>/#(R)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PullGlove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -112,13 +121,31 @@
                     "id": "7a7d79eb-3b89-42b2-adcd-1d0763097ad3",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
                     "type": "Button",
                     "id": "f787eef1-b7fa-4385-8bd0-a57e3c1308c4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PushGlove",
+                    "type": "Button",
+                    "id": "b7155cc0-e24f-4b65-a632-432c963e1cee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PullGlove",
+                    "type": "Button",
+                    "id": "a6c7936a-df20-4d19-a946-96efd64a72e1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -167,6 +194,28 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c36af23a-2e19-47f5-864d-2e7281e979a9",
+                    "path": "<Keyboard>/#(/)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PushGlove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bce6f7c2-1c40-44b1-b36b-cb3a8951e280",
+                    "path": "<Keyboard>/#(.)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PullGlove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
