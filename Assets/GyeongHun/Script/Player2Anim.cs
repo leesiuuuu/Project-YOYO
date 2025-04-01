@@ -43,7 +43,8 @@ public class Player2Anim : MonoBehaviour
         {
             player2.Grab = false;
             playanim = false;
-            grab.setPosing = false; 
+            grab.setPosing = false;
+            grab.targetingable = false;
         }
     }
 }

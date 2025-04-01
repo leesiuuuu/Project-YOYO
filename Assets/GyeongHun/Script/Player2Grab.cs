@@ -8,6 +8,7 @@ public class Player2Grab : MonoBehaviour
     Transform Target;
 
     public bool setPosing;
+    public bool targetingable;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Player2Grab : MonoBehaviour
     private void Start()
     {
         setPosing = false;
+        targetingable = false;
     }
 
     private void Update()
@@ -37,7 +39,11 @@ public class Player2Grab : MonoBehaviour
         {
             if (player.Grab)
             {
-                Target = collision.gameObject.GetComponent<Transform>();
+                if(!targetingable)
+                {
+                    Target = collision.gameObject.GetComponent<Transform>();
+                    targetingable = true;
+                }
                 setPosing = true;
             }
         }
