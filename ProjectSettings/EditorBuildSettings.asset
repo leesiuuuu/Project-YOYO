@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/SiWoo/Main.unity
     guid: 1eda2b7f7b75411499e743df5c7f057e
+  - enabled: 1
+    path: Assets/SiWoo/SceneA.unity
+    guid: c23a7a96ec515214dbb1616baf44a72d
+  - enabled: 1
+    path: Assets/SiWoo/SceneB.unity
+    guid: 954a8fdaf369ae6458591be6b296ce95
   m_configObjects: {}
