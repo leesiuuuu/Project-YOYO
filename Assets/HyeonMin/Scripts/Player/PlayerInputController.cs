@@ -8,10 +8,11 @@ using UnityEngine.InputSystem;
 /// 코드 설명:
 /// 
 /// 
+/// 
 /// </summary>
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset _playerInput;
+    [SerializeField] private InputActionAsset _inputActionAsset;
     private Player _player;
 
     private Vector2 _moveInput;
@@ -23,7 +24,7 @@ public class PlayerInputController : MonoBehaviour
     private void Awake()
     {
         _player = GetComponent<Player>();
-        KeySetting.Initialize(_playerInput);
+        KeySetting.Initialize(_inputActionAsset);
     }
 
     private void Start()
@@ -31,10 +32,12 @@ public class PlayerInputController : MonoBehaviour
         Debug.Log(_player.PlayerID);
 
         if (_player.PlayerID == 1)
-            _currentActionMap = _playerInput.FindActionMap("Player_1");
+            _currentActionMap = _inputActionAsset.FindActionMap("Player_1");
 
         else if (_player.PlayerID == 2)
-            _currentActionMap = _playerInput.FindActionMap("Player_2");
+            _currentActionMap = _inputActionAsset.FindActionMap("Player_2");
+        else
+            Debug.Log("ID = none");
 
         _currentActionMap.Enable();
         Debug.Log(_currentActionMap.name);
