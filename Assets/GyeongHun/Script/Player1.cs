@@ -9,6 +9,9 @@ public class Player1 : MonoBehaviour
     PushGlove glove;
     GameObject _glove;
 
+    //»õ ±×·¦
+    ReNewGrab grab;
+
     public float moveSpeed = 4f;
     public float x;
 
@@ -28,6 +31,9 @@ public class Player1 : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         _glove = GameObject.Find("PushGlove");
         glove = GetComponentInChildren<PushGlove>();
+
+        //»õ ±×·¦
+        grab = GetComponentInChildren<ReNewGrab>();
     }
 
     private void Update()
