@@ -57,14 +57,6 @@ public class PlayerInputController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         MoveInput = context.ReadValue<Vector2>();
-
-        moveDir = MoveInput.x;
-    }
-
-    private void Update()
-    {
-
-        transform.Translate(new Vector3(moveDir * _player.MoveSpeed * Time.deltaTime, 0, 0));
     }
 
     public void OnJump(InputAction.CallbackContext context)
