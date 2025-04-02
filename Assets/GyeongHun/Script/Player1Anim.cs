@@ -33,19 +33,5 @@ public class Player1Anim : MonoBehaviour
             player1.Push = false;
             playanim = false;
         }
-
-        if(player1.Grab && !playanim)
-        {
-            anim.Play("Player1Grab");
-            playanim = true;
-        }
-
-        if(stateinfo.IsName("Player1Grab") && stateinfo.normalizedTime > 0.9f)
-        {
-            player1.Grab = false;
-            playanim = false;
-            grab.setPosing = false;
-            grab.targetingable = false;
-        }
     }
 }

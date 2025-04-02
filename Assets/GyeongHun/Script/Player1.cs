@@ -9,12 +9,14 @@ public class Player1 : MonoBehaviour
     PushGlove glove;
     GameObject _glove;
 
+    //»õ ±×·¦
+    Player1Grab grab;
+
     public float moveSpeed = 4f;
     public float x;
 
     public bool jumpAble = true;
     public bool Push;
-    public bool Grab;
 
     public bool flip;
 
@@ -28,6 +30,9 @@ public class Player1 : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         _glove = GameObject.Find("PushGlove");
         glove = GetComponentInChildren<PushGlove>();
+
+        //»õ ±×·¦
+        grab = GetComponentInChildren<Player1Grab>();
     }
 
     private void Update()
@@ -56,11 +61,6 @@ public class Player1 : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.R) && !Grab)
-        {
-            Grab = true;
-        }
-        
 
         if (Input.GetKeyDown(KeyCode.W) && jumpAble)
         {
@@ -73,7 +73,7 @@ public class Player1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!Grab)
+        if(!grab.grabing)
         {
             x = Input.GetAxisRaw("Horizontal1");
             if (x > 0 && flip)
