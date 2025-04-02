@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player2Grab : MonoBehaviour
+public class ReNewGrab : MonoBehaviour
 {
-    Player2 player;
+    Player1 player;
 
     public Transform Target;
 
-    public Vector3 addtargetPos = new Vector2(19f, 0);
+    Vector3 addtargetPos = new Vector2(20f, 0);
     Vector3 StartPos = new Vector2(0.64f, 0);
 
     public float moveSpeed;
@@ -19,28 +21,28 @@ public class Player2Grab : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponentInParent<Player2>();
+        player = GetComponentInParent<Player1>();
     }
 
     private void Start()
     {
-        transform.localPosition = StartPos;
+        transform.position = StartPos;
         holdGrab = false;
-        moveSpeed = 5.5f;
+        moveSpeed = 5;
         grabing = false;
         targetingable = true;
     }
 
     private void Update()
     {
-        if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= 1)
+        if(Vector3.Distance(gameObject.transform.position, player.transform.position) <= 1)
         {
             holdGrab = false;
             targetingable = true;
             Target = null;
         }
 
-        if (Input.GetKeyUp(KeyCode.Period) && grabing == false)
+        if (Input.GetKeyUp(KeyCode.T) && grabing == false)
         {
             StartCoroutine(GoGrab());
             grabing = true;
@@ -59,20 +61,22 @@ public class Player2Grab : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("interactive"))
         {
-            if (grabing)
+            if(grabing)
             {
                 if (targetingable)
                 {
                     Target = collision.gameObject.GetComponent<Transform>();
+                    if(Target.parent != null)
+                    {
+                        Target = Target.parent;
+                    }
                     targetingable = false;
-                    StopAllCoroutines();
-                    StartCoroutine(BackGrab());
                 }
                 holdGrab = true;
             }
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
+        if (!collision.gameObject.CompareTag("interactive"))
         {
             StopAllCoroutines();
             StartCoroutine(BackGrab());
@@ -98,6 +102,7 @@ public class Player2Grab : MonoBehaviour
             }
             yield return null;
         }
+        transform.localPosition = targetPos;
 
         StartCoroutine(BackGrab());
     }
@@ -121,6 +126,8 @@ public class Player2Grab : MonoBehaviour
             }
             yield return null;
         }
+        transform.localPosition = targetPos;
         grabing = false;
     }
+
 }
