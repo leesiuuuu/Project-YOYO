@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -34,25 +35,25 @@ public class ReNewGrab : MonoBehaviour
 
     private void Update()
     {
-        if (holdGrab)
+        if(Vector3.Distance(gameObject.transform.position, player.transform.position) <= 1)
         {
-            if(grabing)
-            {
-                Target.transform.position = gameObject.transform.position;
-            }
-        }
-
-        if(Vector2.Distance(gameObject.transform.localPosition, player.transform.position) < 1)
-        {
-            StopAllCoroutines();
             holdGrab = false;
             targetingable = true;
+            Target = null;
         }
 
         if (Input.GetKeyUp(KeyCode.T) && grabing == false)
         {
             StartCoroutine(GoGrab());
             grabing = true;
+        }
+
+        if (holdGrab)
+        {
+            if (grabing)
+            {
+                Target.transform.position = gameObject.transform.position;
+            }
         }
     }
 
@@ -65,6 +66,11 @@ public class ReNewGrab : MonoBehaviour
                 if (targetingable)
                 {
                     Target = collision.gameObject.GetComponent<Transform>();
+                    if(Target.parent != null)
+                    {
+                        Target = Target.parent;
+                    }
+                    targetingable = false;
                 }
                 holdGrab = true;
             }
