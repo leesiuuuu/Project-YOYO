@@ -334,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PlayerID>k__BackingField: 1
   _moveSpeed: 4
-  _jumpForce: 0
+  _jumpForce: 4
 --- !u!70 &56934860
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PlayerID>k__BackingField: 2
   _moveSpeed: 4
-  _jumpForce: 0
+  _jumpForce: 4
 --- !u!114 &236402111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 767355040}
   - component: {fileID: 767355039}
   - component: {fileID: 767355041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
