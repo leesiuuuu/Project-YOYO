@@ -7,7 +7,6 @@ public class Player1 : MonoBehaviour
     Rigidbody2D rigid;
 
     PushGlove glove;
-    GameObject _glove;
 
     //»õ ±×·¦
     Player1Grab grab;
@@ -28,7 +27,6 @@ public class Player1 : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        _glove = GameObject.Find("PushGlove");
         glove = GetComponentInChildren<PushGlove>();
 
         //»õ ±×·¦
@@ -37,30 +35,26 @@ public class Player1 : MonoBehaviour
 
     private void Update()
     {
-        if (_glove.active)
-        {
-            glove.player1PushPower = pushCharge;
+        glove.player1PushPower = pushCharge;
 
-            if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isCharging = true;
+            pushCharge = 0f;
+        }
+        if (Input.GetKey(KeyCode.E) && isCharging)
+        {
+            pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
+            if (pushCharge > maxPushCharge)
             {
-                isCharging = true;
-                pushCharge = 0f;
-            }
-            if (Input.GetKey(KeyCode.E) && isCharging)
-            {
-                pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
-                if (pushCharge > maxPushCharge)
-                {
-                    pushCharge = maxPushCharge;
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.E) && isCharging)
-            {
-                isCharging = false;
-                Push = true;
+                pushCharge = maxPushCharge;
             }
         }
-
+        if (Input.GetKeyUp(KeyCode.E) && isCharging)
+        {
+            isCharging = false;
+            Push = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.W) && jumpAble)
         {
