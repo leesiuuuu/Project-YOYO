@@ -64,7 +64,7 @@ public class PlayerInputController : MonoBehaviour
         if (context.performed)
         {
             Debug.Log("Jump");
-
+            _player.Jump();
         }
     }
 

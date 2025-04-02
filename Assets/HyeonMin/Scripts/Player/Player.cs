@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float _jumpForce;
     public float JumpForce => _jumpForce;
+    private bool _canJump = true;
     private bool _isFliped = false;
 
     [field: Header("Component")]
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
             Flip();
 
         Move();
+        CheckGround();
     }
 
     private void Move()
@@ -42,11 +44,37 @@ public class Player : MonoBehaviour
         transform.Translate(new Vector3(moveDir * _moveSpeed * Time.deltaTime, 0, 0));
     }
 
+    private void CheckGround()
+    {
+        if (Physics2D.Raycast(transform.position, Vector3.down, 1.2f, LayerMask.GetMask("Ground")))
+        {
+            _canJump = true;
+        }
+        else
+        {
+            _canJump = false;
+        }
+    }
+
+    public void Jump()
+    {
+        if (_canJump)
+        {
+            Rigid.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
     private void Flip()
     {
         _isFliped = !_isFliped;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * 1.2f);
     }
 }
