@@ -242,13 +242,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 803363705}
   m_HandleRect: {fileID: 631454269}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2000368341}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: BGSoundVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &501456748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,7 +2124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
+  m_HorizontalAxis: Horizontal1
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
@@ -2491,6 +2503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cdf70c58de0a2429648c0ec42d651d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgSound: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 49a6f386b4230af49a9eb5fc64e81290, type: 2}
 --- !u!1 &2030548400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,13 +2724,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 925027430}
   m_HandleRect: {fileID: 1522255412}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2000368341}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: SFXSoundVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2073961865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,5 +3019,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 501456751}
   - {fileID: 1785073161}
-  - {fileID: 1678324104}
   - {fileID: 2000368340}
+  - {fileID: 1678324104}
