@@ -12,10 +12,12 @@ public class MainButton : MonoBehaviour, ISelectHandler
 			if(others[o].gameObject == Panel)
 			{
 				others[o].alpha = 1;
+				others[o].interactable = true;
 				continue;
 			}
 
 			others[o].alpha = 0;
+			others[o].interactable = false;
 		}
 	}
 }
