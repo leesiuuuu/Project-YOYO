@@ -116,9 +116,9 @@ public class Player2 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Period))
         {
-            if (Time.time - RPressTime >= 1f)
+            if (Time.time - RPressTime >= .5f)
             {
-                float elapsed = Time.time - RPressTime - 1f;
+                float elapsed = Time.time - RPressTime - .5f;
                 float angle = Mathf.Sin(elapsed * RotSpeed) * maxAngle;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, angle);
             }
