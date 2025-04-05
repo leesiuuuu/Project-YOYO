@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +28,6 @@ public class Setting : MonoBehaviour
 		resolutionNum = resolutions.Count-1;
 		isFullScreen.isOn = Screen.fullScreen;
 		UpdateScreenText();
-
 	}
 	private void UpdateScreenText()
 	{

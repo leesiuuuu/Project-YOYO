@@ -3748,7 +3748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 270, y: -38.3}
+  m_AnchoredPosition: {x: 270, y: -38.300003}
   m_SizeDelta: {x: 500, y: 76.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1000389155
@@ -4548,7 +4548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1284943970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5862,7 +5862,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1331509090}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1986314442}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: ActiveSetting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1347409168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,7 +5891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1347409169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6455,7 +6467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 270, y: -38.3}
+  m_AnchoredPosition: {x: 270, y: -38.300003}
   m_SizeDelta: {x: 500, y: 76.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425429991
@@ -7280,7 +7292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
+  m_SendPointerHoverToParent: 0
   m_HorizontalAxis: Horizontal1
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -7300,7 +7312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1288073803}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1678324104
@@ -8046,6 +8058,7 @@ GameObject:
   - component: {fileID: 1785073160}
   - component: {fileID: 1785073159}
   - component: {fileID: 1785073158}
+  - component: {fileID: 1785073162}
   m_Layer: 5
   m_Name: SettingCanvas
   m_TagString: Untagged
@@ -8136,6 +8149,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1785073162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785073157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f4d391ad14b9d439b2af2500024467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _system: {fileID: 1678324103}
+  FirstSelectObj: {fileID: 1293642667}
+  soundSlider:
+  - {fileID: 2047137790}
+  - {fileID: 332156927}
 --- !u!1 &1796868847
 GameObject:
   m_ObjectHideFlags: 0
@@ -8663,6 +8693,7 @@ GameObject:
   - component: {fileID: 1986314440}
   - component: {fileID: 1986314439}
   - component: {fileID: 1986314438}
+  - component: {fileID: 1986314442}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -8753,6 +8784,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1986314442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986314437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c125b663c9162e45ad9c1485794b887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SettingPrefab: {fileID: 1785073157}
+  SettingButton: {fileID: 1331509092}
 --- !u!1 &1993064624
 GameObject:
   m_ObjectHideFlags: 0
@@ -9807,7 +9852,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 501456751}
   - {fileID: 1785073161}
+  - {fileID: 1986314441}
   - {fileID: 2000368340}
   - {fileID: 1678324104}
   - {fileID: 1321152159}
-  - {fileID: 1986314441}

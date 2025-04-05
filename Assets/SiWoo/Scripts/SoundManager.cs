@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Audio;
-using static Unity.VisualScripting.Member;
 
 public class SoundManager : MonoBehaviour
 {
@@ -48,10 +47,16 @@ public class SoundManager : MonoBehaviour
 	}
 	public void BGSoundVolume(float val)
 	{
-		audioMixer.SetFloat("MusicVolume", Mathf.Log10(val) * 20);
+		float n = Mathf.Log10(val) * 20;
+		audioMixer.SetFloat("MusicVolume", n);
+		PlayerPrefs.SetFloat("MusicVolume", val);
+		PlayerPrefs.Save();
 	}
 	public void SFXSoundVolume(float val)
 	{
-		audioMixer.SetFloat("SFXVolume", Mathf.Log10(val) * 20);
+		float n = Mathf.Log10(val) * 20;
+		audioMixer.SetFloat("SFXVolume", n);
+		PlayerPrefs.SetFloat("SFXVolume", val);
+		PlayerPrefs.Save();
 	}
 }
