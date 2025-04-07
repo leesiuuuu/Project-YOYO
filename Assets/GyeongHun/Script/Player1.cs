@@ -21,7 +21,7 @@ public class Player1 : MonoBehaviour
 
     private float RPressTime = 0f;
     [SerializeField]private float RotSpeed = 1f;
-    private float maxAngle = 20f;
+    public float maxAngle = 20f;
 
     private void Awake()
     {
