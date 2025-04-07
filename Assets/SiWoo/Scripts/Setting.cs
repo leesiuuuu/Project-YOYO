@@ -1,72 +1,54 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Setting : MonoBehaviour
 {
-	[SerializeField]
-	private Dropdown resolutionDropdown;
-
-	[SerializeField]
-	private Toggle fullScreenBtn;
-
 	FullScreenMode fullScreenMode;
 
 	//[SerializeField]
 	private List<Resolution> resolutions = new List<Resolution>();
 
 	[SerializeField]
+	private TMP_Text text;
+
+	[SerializeField]
+	private Toggle isFullScreen;
+
+	[SerializeField]
 	private int resolutionNum;
 
-	private ScrollRect scrollRect;
 	private void Start()
 	{
-		InitUI();
-	}
-
-	void InitUI()
-	{
-		resolutions.AddRange(Screen.resolutions);
-		resolutionDropdown.options.Clear();
-
-
-		int optionNum = 0;
-		foreach(Resolution item in resolutions)
+		for(int i =0; i < Screen.resolutions.Length; i++)
 		{
-			Dropdown.OptionData option = new Dropdown.OptionData();
-			option.text = item.width + "x" + item.height + " " + (int)item.refreshRateRatio.value + "hz";
-			resolutionDropdown.options.Add(option);
-
-			if (item.width == Screen.width && item.height == Screen.height)
-				resolutionDropdown.value = optionNum;
-			optionNum++;
+			if (Screen.resolutions[i].refreshRateRatio.value >= 30 && (Screen.resolutions[i].width * 9 == Screen.resolutions[i].height * 16) && Screen.resolutions[i].width >= 1280)
+			{
+				resolutions.Add(Screen.resolutions[i]);
+			}
 		}
-		resolutionDropdown.RefreshShownValue();
-
-		fullScreenBtn.isOn = Screen.fullScreenMode.Equals(FullScreenMode.FullScreenWindow) ? true : false;
-
-		scrollRect = resolutionDropdown.GetComponentInChildren<ScrollRect>();
-
-		resolutionDropdown.onValueChanged.AddListener(delegate { ScrollToSelected(); });
+		resolutionNum = resolutions.Count-1;
+		isFullScreen.isOn = Screen.fullScreen;
+		UpdateScreenText();
+	}
+	private void UpdateScreenText()
+	{
+		text.text = $"{resolutions[resolutionNum].width} x {resolutions[resolutionNum].height} {(int)resolutions[resolutionNum].refreshRateRatio.value}hz";
 	}
 
-	void ScrollToSelected()
+	public void MoveScreenListLeft()
 	{
-		if (scrollRect == null) return;
-
-		int selectedIndex = resolutionDropdown.value;
-		int totalOption = resolutionDropdown.options.Count;
-
-		if (totalOption <= 1) return;
-
-		float scrollPos = 1f - ((float)selectedIndex / (totalOption - 1));
-
-		scrollRect.verticalNormalizedPosition = scrollPos;
+		resolutionNum--;
+		resolutionNum = Mathf.Clamp(resolutionNum, 0, resolutions.Count-1);
+		UpdateScreenText();
 	}
 
-	public void DropboxOptionChange(int x)
+	public void MoveScreenListRight()
 	{
-		resolutionNum = x;
+		resolutionNum++;
+		resolutionNum = Mathf.Clamp(resolutionNum, 0, resolutions.Count - 1);
+		UpdateScreenText();
 	}
 
 	public void FullScreenBtn(bool isFull)
