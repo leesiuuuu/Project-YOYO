@@ -23,7 +23,10 @@ public class Setting : MonoBehaviour
 	{
 		for(int i =0; i < Screen.resolutions.Length; i++)
 		{
-			resolutions.Add(Screen.resolutions[i]);
+			if (Screen.resolutions[i].refreshRateRatio.value >= 30 && (Screen.resolutions[i].width * 9 == Screen.resolutions[i].height * 16) && Screen.resolutions[i].width >= 1280)
+			{
+				resolutions.Add(Screen.resolutions[i]);
+			}
 		}
 		resolutionNum = resolutions.Count-1;
 		isFullScreen.isOn = Screen.fullScreen;
