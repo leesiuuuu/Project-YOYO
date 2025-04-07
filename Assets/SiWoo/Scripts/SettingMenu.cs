@@ -26,6 +26,8 @@ public class SettingMenu : MonoBehaviour
     private int ControlMode;
 	private void OnEnable()
 	{
+        GetComponent<Canvas>().worldCamera = FindObjectOfType<Camera>();
+
         soundSlider[0].value = PlayerPrefs.HasKey("SFXVolume") ? PlayerPrefs.GetFloat("SFXVolume") : 1;
         soundSlider[1].value = PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 1;
 

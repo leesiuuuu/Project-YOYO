@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
 	[SerializeField]
 	private Button SettingButton;
 
+	private void OnEnable()
+	{
+		GetComponent<Canvas>().worldCamera = FindObjectOfType<Camera>();
+	}
+
 	public void ActiveSetting()
 	{
 		SettingPrefab.SetActive(true);
