@@ -148,7 +148,14 @@ public class NewChargeUI : MonoBehaviour
             }
             else
             {
-
+                if (Input.GetButton("Push2"))
+                {
+                    P2Gage.gameObject.SetActive(true);
+                }
+                else
+                {
+                    P2Gage.gameObject.SetActive(false);
+                }
             }
         }
 
@@ -169,7 +176,14 @@ public class NewChargeUI : MonoBehaviour
             }
             else
             {
-
+                if (Input.GetButton("Pull2"))
+                {
+                    P2GrabRange.SetActive(true);
+                }
+                else
+                {
+                    P2GrabRange.SetActive(false);
+                }
             }
         }
 

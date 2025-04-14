@@ -40,10 +40,21 @@ public class NewPlayer2Grab : MonoBehaviour
             Target = null;
         }
 
-        if (Input.GetKeyUp(KeyCode.Period) && grabing == false)
+        if (!player.IsGamePad)
         {
-            StartCoroutine(GoGrab());
-            grabing = true;
+            if (Input.GetKeyUp(KeyCode.Period) && grabing == false)
+            {
+                StartCoroutine(GoGrab());
+                grabing = true;
+            }
+        }
+        else
+        {
+            if (Input.GetButtonUp("Pull2") && grabing == false)
+            {
+                StartCoroutine(GoGrab());
+                grabing = true;
+            }
         }
 
         if (holdGrab)

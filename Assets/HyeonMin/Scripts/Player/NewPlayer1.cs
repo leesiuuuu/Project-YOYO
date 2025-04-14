@@ -124,7 +124,6 @@ public class NewPlayer1 : MonoBehaviour
         if (!IsGamePad)
         {
             x = (int)Input.GetAxisRaw("Horizontal1");
-            Debug.Log("키보드");
 
             if (Input.GetKey(KeyCode.A))
             {
@@ -138,7 +137,6 @@ public class NewPlayer1 : MonoBehaviour
         else
         {
             x = (int)Input.GetAxisRaw("JoyStick1");
-            Debug.Log("조이스틱");
             transform.Translate(x * moveSpeed * Time.deltaTime, 0, 0);
         }
     }

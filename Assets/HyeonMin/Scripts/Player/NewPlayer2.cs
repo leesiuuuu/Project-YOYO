@@ -79,7 +79,30 @@ public class NewPlayer2 : MonoBehaviour
         }
         else
         {
-            
+            if (Input.GetButtonDown("Jump2") && jumpAble)
+            {
+                rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
+                jumpAble = false;
+            }
+
+            if (Input.GetButtonDown("Push2"))
+            {
+                isCharging = true;
+                pushCharge = 0f;
+            }
+            if (Input.GetButtonDown("Push2") && isCharging)
+            {
+                pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
+                if (pushCharge > maxPushCharge)
+                {
+                    pushCharge = maxPushCharge;
+                }
+            }
+            if (Input.GetButtonUp("Push2") && isCharging)
+            {
+                isCharging = false;
+                Push = true;
+            }
         }
     }
 
@@ -101,7 +124,6 @@ public class NewPlayer2 : MonoBehaviour
         if (!IsGamePad)
         {
             x = (int)Input.GetAxisRaw("Horizontal2");
-            Debug.Log("키보드");
 
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -115,7 +137,6 @@ public class NewPlayer2 : MonoBehaviour
         else
         {
             x = (int)Input.GetAxisRaw("JoyStick2");
-            Debug.Log("조이스틱");
             transform.Translate(x * moveSpeed * Time.deltaTime, 0, 0);
         }
     }
@@ -159,7 +180,30 @@ public class NewPlayer2 : MonoBehaviour
         }
         else
         {
+            if (Input.GetButtonDown("Pull2"))
+            {
+                RPressTime = Time.time;
+                Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
 
+            if (Input.GetButton("Pull2"))
+            {
+                if (Time.time - RPressTime >= .5f)
+                {
+                    float elapsed = Time.time - RPressTime - .5f;
+                    float angle = Mathf.Sin(elapsed * RotSpeed) * maxAngle;
+                    Grab.transform.rotation = Quaternion.Euler(0, 0, angle);
+                }
+                else
+                {
+                    Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+            }
+
+            if (Input.GetButtonUp("Pull2"))
+            {
+                Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
         }
     }
 }

@@ -19,7 +19,6 @@ public class NewPushGlove : MonoBehaviour
 
     public bool _canPushPlayer1 = true;
     public bool _canPushPlayer2 = true;
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         NewPlayer1 player1 = gameObject.GetComponentInParent<NewPlayer1>();

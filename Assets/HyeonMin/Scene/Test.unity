@@ -559,7 +559,7 @@ MonoBehaviour:
   maxPushCharge: 35
   chargeTime: 1
   RotSpeed: 1
-  <IsGamePad>k__BackingField: 0
+  <IsGamePad>k__BackingField: 1
 --- !u!114 &1083597871
 MonoBehaviour:
   m_ObjectHideFlags: 0
