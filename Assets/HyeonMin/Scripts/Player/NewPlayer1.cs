@@ -8,7 +8,7 @@ public class NewPlayer1 : MonoBehaviour
     GameObject Grab;
 
     public float moveSpeed = 4f;
-    public float x;
+    public int x;
     public bool jumpAble = true;
     public bool Push;
     public bool flip;
@@ -72,7 +72,6 @@ public class NewPlayer1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        x = Input.GetAxisRaw("Horizontal");
 
         if (!grab.grabing)
         {
@@ -89,6 +88,8 @@ public class NewPlayer1 : MonoBehaviour
 
         if (!IsGamePad)
         {
+            x = (int)Input.GetAxisRaw("Horizontal1");
+
             if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(moveSpeed * -1f * Time.deltaTime, 0, 0);
@@ -100,7 +101,8 @@ public class NewPlayer1 : MonoBehaviour
         }
         else
         {
-
+            x = (int)Input.GetAxisRaw("JoyStick1");
+            transform.Translate(x * moveSpeed * Time.deltaTime, 0, 0);
         }
     }
 
