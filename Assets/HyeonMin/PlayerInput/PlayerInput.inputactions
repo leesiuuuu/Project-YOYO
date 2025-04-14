@@ -29,7 +29,7 @@
                     "id": "3bfb60f5-9615-44ed-a44c-bfd09ed24f27",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold(duration=3)",
                     "initialStateCheck": false
                 },
                 {
@@ -77,6 +77,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Direction",
+                    "id": "96d9a3bf-4cfa-4ef8-add4-cc475a7796f5",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "5c5cd4be-3740-429c-a2db-3d9e0ca6ac63",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "edec6f3f-065e-475a-9f66-3e38ba461d56",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "c3cddc42-cd4e-48f8-9cd8-9f510a8ee208",
                     "path": "<Keyboard>/#(W)",
@@ -89,11 +122,33 @@
                 },
                 {
                     "name": "",
+                    "id": "2ea4b1a8-8f60-4dcf-9d84-42b837140835",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "016b8136-9a06-418e-881a-f535bf6a16f7",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "PushGlove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e23851d-5326-448d-8667-fea0093aa599",
                     "path": "<Keyboard>/#(E)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "PushGlove",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -104,7 +159,18 @@
                     "path": "<Keyboard>/#(R)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
+                    "action": "PullGlove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b28d6387-d390-4658-8035-01e6025a63c7",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
                     "action": "PullGlove",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -139,7 +205,7 @@
                     "id": "b7155cc0-e24f-4b65-a632-432c963e1cee",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 },
                 {
@@ -187,6 +253,39 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Direction",
+                    "id": "000d6f00-3c90-4e14-b8d6-d1479f676049",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "eb86a7e8-92fd-45dc-91e2-e0c49e00b6f4",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "e19b54c5-a963-49aa-8f84-2d55bf1e000d",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "c5549760-7e53-4349-85cf-16f1f7e355c7",
                     "path": "<Keyboard>/upArrow",
@@ -199,11 +298,33 @@
                 },
                 {
                     "name": "",
+                    "id": "e4a1cdcc-48f5-46bd-8473-9cd663628392",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c36af23a-2e19-47f5-864d-2e7281e979a9",
                     "path": "<Keyboard>/#(/)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
+                    "action": "PushGlove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49459249-1d19-44e3-8434-857229047975",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
                     "action": "PushGlove",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -214,7 +335,18 @@
                     "path": "<Keyboard>/#(.)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
+                    "action": "PullGlove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "052328f5-aedf-4f5f-8b86-5dbe90c6b459",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
                     "action": "PullGlove",
                     "isComposite": false,
                     "isPartOfComposite": false
