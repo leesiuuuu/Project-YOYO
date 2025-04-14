@@ -17,6 +17,14 @@ public class TurnColorObject : MonoBehaviour
    
     ColorType colorType = ColorType.White;
 
+    private void Start()
+    {
+        for (int i = 0; i < blackTileList.Count; i++)
+        {
+            blackTileList[i].SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent<Player1>(out var _) || collision.TryGetComponent<Player2>(out var _))
@@ -27,13 +35,10 @@ public class TurnColorObject : MonoBehaviour
 
     void TurnColor()
     {
-        Debug.Log("Turn");
-
         colorType = colorType == ColorType.White ? ColorType.Black : ColorType.White;
 
         if (colorType == ColorType.White)
         {
-            anim.Play("White");
             for (int i = 0; i < whiteTileList.Count; i++)
             {
                 whiteTileList[i].SetActive(true);
@@ -45,7 +50,6 @@ public class TurnColorObject : MonoBehaviour
         }
         else
         {
-            anim.Play("Black");
             for (int i = 0; i < whiteTileList.Count; i++)
             {
                 whiteTileList[i].SetActive(false);
