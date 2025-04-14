@@ -159,7 +159,6 @@ public class NewChargeUI : MonoBehaviour
             }
         }
 
-
         //±×·¦ UI
         if (Player2Grab.activeSelf)
         {

@@ -52,12 +52,6 @@ public class NewPlayer2 : MonoBehaviour
 
         if (!IsGamePad)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) && jumpAble)
-            {
-                rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
-                jumpAble = false;
-            }
-
             if (Input.GetKeyDown(KeyCode.Slash))
             {
                 isCharging = true;
@@ -76,6 +70,12 @@ public class NewPlayer2 : MonoBehaviour
                 isCharging = false;
                 Push = true;
             }
+
+            if (Input.GetKeyDown(KeyCode.UpArrow) && jumpAble)
+            {
+                rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
+                jumpAble = false;
+            }
         }
         else
         {
@@ -87,11 +87,15 @@ public class NewPlayer2 : MonoBehaviour
 
             if (Input.GetButtonDown("Push2"))
             {
+                Debug.Log("Â÷Áö ½ÃÀÛ");
+
                 isCharging = true;
-                pushCharge = 0f;
+                pushCharge = 0;
             }
-            if (Input.GetButtonDown("Push2") && isCharging)
+            if (Input.GetButton("Push2") && isCharging)
             {
+                Debug.Log("Â÷Â¡ Áß");
+
                 pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
                 if (pushCharge > maxPushCharge)
                 {
@@ -100,6 +104,8 @@ public class NewPlayer2 : MonoBehaviour
             }
             if (Input.GetButtonUp("Push2") && isCharging)
             {
+                Debug.Log("Â÷Â¡ ³¡");
+
                 isCharging = false;
                 Push = true;
             }
