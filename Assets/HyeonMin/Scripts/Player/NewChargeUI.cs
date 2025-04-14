@@ -78,30 +78,56 @@ public class NewChargeUI : MonoBehaviour
         //ÁÖ¸Ô UI
         if (PushGlove1.activeSelf)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (!player1.IsGamePad)
             {
-                P1Gage.gameObject.SetActive(true);
+                if (Input.GetKey(KeyCode.E))
+                {
+                    P1Gage.gameObject.SetActive(true);
+                }
+                else
+                {
+                    P1Gage.gameObject.SetActive(false);
+                }
             }
             else
             {
-                P1Gage.gameObject.SetActive(false);
+                if (Input.GetButton("Push1"))
+                {
+                    P1Gage.gameObject.SetActive(true);
+                }
+                else
+                {
+                    P1Gage.gameObject.SetActive(false);
+                }
             }
-
         }
 
         //±×·¦ UI
         if (Player1Grab.activeSelf)
         {
-            if (Input.GetKey(KeyCode.R))
+            if (!player1.IsGamePad)
             {
-                P1GrabRange.SetActive(true);
+                if (Input.GetKey(KeyCode.R))
+                {
+                    P1GrabRange.SetActive(true);
+                }
+                else
+                {
+                    P1GrabRange.SetActive(false);
+                }
             }
             else
             {
-                P1GrabRange.SetActive(false);
+                if (Input.GetButton("Pull1"))
+                {
+                    P1GrabRange.SetActive(true);
+                }
+                else
+                {
+                    P1GrabRange.SetActive(false);
+                }
             }
         }
-
     }
 
     void Player2UI()

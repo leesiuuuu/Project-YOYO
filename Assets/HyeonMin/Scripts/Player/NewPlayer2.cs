@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewPlayer2 : MonoBehaviour
 {
     Rigidbody2D rigid;
-    PushGlove glove;
+    NewPushGlove glove;
 
     NewPlayer2Grab grab;
     GameObject Grab;
@@ -32,7 +32,7 @@ public class NewPlayer2 : MonoBehaviour
 
     private void Awake()
     {
-        glove = GetComponentInChildren<PushGlove>();
+        glove = GetComponentInChildren<NewPushGlove>();
         rigid = GetComponent<Rigidbody2D>();
 
         grab = GetComponentInChildren<NewPlayer2Grab>();
@@ -79,7 +79,7 @@ public class NewPlayer2 : MonoBehaviour
         }
         else
         {
-
+            
         }
     }
 
@@ -101,6 +101,7 @@ public class NewPlayer2 : MonoBehaviour
         if (!IsGamePad)
         {
             x = (int)Input.GetAxisRaw("Horizontal2");
+            Debug.Log("키보드");
 
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -114,6 +115,7 @@ public class NewPlayer2 : MonoBehaviour
         else
         {
             x = (int)Input.GetAxisRaw("JoyStick2");
+            Debug.Log("조이스틱");
             transform.Translate(x * moveSpeed * Time.deltaTime, 0, 0);
         }
     }

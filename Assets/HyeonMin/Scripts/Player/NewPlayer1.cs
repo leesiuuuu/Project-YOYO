@@ -1,9 +1,10 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class NewPlayer1 : MonoBehaviour
 {
     Rigidbody2D rigid;
-    PushGlove glove;
+    NewPushGlove glove;
     NewPlayer1Grab grab;
     GameObject Grab;
 
@@ -27,7 +28,7 @@ public class NewPlayer1 : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        glove = GetComponentInChildren<PushGlove>();
+        glove = GetComponentInChildren<NewPushGlove>();
         grab = GetComponentInChildren<NewPlayer1Grab>();
         Grab = GameObject.Find("Grab1");
     }
@@ -68,7 +69,41 @@ public class NewPlayer1 : MonoBehaviour
                 jumpAble = false;
             }
         }
+        else
+        {
+            if (Input.GetButtonDown("Jump1") && jumpAble)
+            {
+                rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
+                jumpAble = false;
+            }
+
+            if (Input.GetButtonDown("Push1"))
+            {
+                Debug.Log("Â÷Áö ½ÃÀÛ");
+
+                isCharging = true;
+                pushCharge = 0;
+            }
+            if (Input.GetButton("Push1") && isCharging)
+            {
+                Debug.Log("Â÷Â¡ Áß");
+
+                pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
+                if (pushCharge > maxPushCharge)
+                {
+                    pushCharge = maxPushCharge;
+                }
+            }
+            if (Input.GetButtonUp("Push1") && isCharging)
+            {
+                Debug.Log("Â÷Â¡ ³¡");
+
+                isCharging = false;
+                Push = true;
+            }
+        }
     }
+    
 
     private void FixedUpdate()
     {
@@ -89,6 +124,7 @@ public class NewPlayer1 : MonoBehaviour
         if (!IsGamePad)
         {
             x = (int)Input.GetAxisRaw("Horizontal1");
+            Debug.Log("Å°º¸µå");
 
             if (Input.GetKey(KeyCode.A))
             {
@@ -102,6 +138,7 @@ public class NewPlayer1 : MonoBehaviour
         else
         {
             x = (int)Input.GetAxisRaw("JoyStick1");
+            Debug.Log("Á¶ÀÌ½ºÆ½");
             transform.Translate(x * moveSpeed * Time.deltaTime, 0, 0);
         }
     }
@@ -145,7 +182,34 @@ public class NewPlayer1 : MonoBehaviour
         }
         else
         {
+            if (Input.GetButtonDown("Pull1"))
+            {
+                Debug.Log("±×·¦ Â÷Â¡ ½ÃÀÛ");
+                RPressTime = Time.time;
+                Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
 
+            if (Input.GetButton("Pull1"))
+            {
+                Debug.Log("±×·¦ Â÷Â¡ Áß");
+
+                if (Time.time - RPressTime >= .5f)
+                {
+                    float elapsed = Time.time - RPressTime - .5f;
+                    float angle = Mathf.Sin(elapsed * RotSpeed) * maxAngle;
+                    Grab.transform.rotation = Quaternion.Euler(0, 0, angle);
+                }
+                else
+                {
+                    Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+            }
+
+            if (Input.GetButtonUp("Pull1"))
+            {
+                Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
+                Debug.Log("±×·¦ Â÷Â¡ ³¡");
+            }
         }
     }
 }
