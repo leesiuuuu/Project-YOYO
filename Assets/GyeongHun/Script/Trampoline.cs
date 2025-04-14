@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class Trampoline : MonoBehaviour
+{
+    public GameObject trampoline;
+    public float JumpPower = 2;
+
+    private void Awake()
+    {
+            trampoline = transform.parent.parent.gameObject;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+        {
+            rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
+            StartCoroutine(ScaleSet());
+        }
+    }
+
+    IEnumerator ScaleSet()
+    {
+        float t = 0;
+        Vector3 scale = trampoline.transform.localScale;
+        float duration = 0.15f;
+
+        while (t <= duration)
+        {
+            t += Time.deltaTime;
+            scale.y = Mathf.Lerp(1, 0.8f, t / duration);
+            trampoline.transform.localScale = scale;
+            yield return null;
+        }
+        scale.y = 0.8f;
+
+        yield return StartCoroutine(ScaleReset());
+    }
+
+    IEnumerator ScaleReset()
+    {
+        float t = 0;
+        Vector3 scale = trampoline.transform.localScale;
+        float duration = 0.3f;
+
+        while (t <= duration)
+        {
+            t += Time.deltaTime;
+            scale.y = Mathf.Lerp(0.8f, 1, t / duration);
+            trampoline.transform.localScale = scale;
+            yield return null;
+        }
+        scale.y = 1;
+    }
+
+
+}
