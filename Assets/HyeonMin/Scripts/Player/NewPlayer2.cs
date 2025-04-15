@@ -188,12 +188,15 @@ public class NewPlayer2 : MonoBehaviour
         {
             if (Input.GetButtonDown("Pull2"))
             {
+                Debug.Log("±×·¦ Â÷Â¡ ½ÃÀÛ");
                 RPressTime = Time.time;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (Input.GetButton("Pull2"))
             {
+                Debug.Log("±×·¦ Â÷Â¡ Áß");
+
                 if (Time.time - RPressTime >= .5f)
                 {
                     float elapsed = Time.time - RPressTime - .5f;
@@ -209,7 +212,8 @@ public class NewPlayer2 : MonoBehaviour
             if (Input.GetButtonUp("Pull2"))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
+                Debug.Log("±×·¦ Â÷Â¡ ³¡");
             }
         }
-    }
+     }
 }
