@@ -7,13 +7,14 @@ public class Obstacle : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Player1>() != null)
+        if(collision.GetComponent<NewPlayer1>() != null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        else if(collision.GetComponent<Player2>() != null)
+        else if(collision.GetComponent<NewPlayer2>() != null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
 }

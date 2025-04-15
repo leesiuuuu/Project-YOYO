@@ -10,6 +10,8 @@ public class NewPlayer2 : MonoBehaviour
     NewPlayer2Grab grab;
     GameObject Grab;
 
+    Animator anim;
+
     public float moveSpeed = 4f;
     public int x;
 
@@ -35,6 +37,7 @@ public class NewPlayer2 : MonoBehaviour
         glove = GetComponentInChildren<NewPushGlove>();
         rigid = GetComponent<Rigidbody2D>();
 
+        anim = transform.parent.GetComponent<Animator>();
         grab = GetComponentInChildren<NewPlayer2Grab>();
 
         Grab = GameObject.Find("Grab2");
@@ -75,6 +78,7 @@ public class NewPlayer2 : MonoBehaviour
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
+                anim.Play("Jump");
             }
         }
         else
@@ -83,6 +87,7 @@ public class NewPlayer2 : MonoBehaviour
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
+                anim.Play("Jump");
             }
 
             if (Input.GetButtonDown("Push2"))
@@ -134,16 +139,30 @@ public class NewPlayer2 : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.Translate(moveSpeed * -1f * Time.deltaTime, 0, 0);
+                if (jumpAble)
+                    anim.Play("Move");
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+                if (jumpAble)
+                    anim.Play("Move");
+            }
+            else
+            {
+                if(jumpAble)
+                 anim.Play("Idle");
             }
         }
         else
         {
             x = (int)Input.GetAxisRaw("JoyStick2");
             transform.Translate(x * moveSpeed * Time.deltaTime, 0, 0);
+
+            if (jumpAble && x != 0)
+                anim.Play("Move");
+            else if(x == 0)
+                anim.Play("Idle");
         }
     }
 

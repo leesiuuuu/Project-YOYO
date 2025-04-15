@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8307136148247516803}
   - component: {fileID: 4537939116215578133}
   - component: {fileID: 9124026116371067319}
-  - component: {fileID: 1358801759741016776}
+  - component: {fileID: 878620666300960596}
   m_Layer: 0
   m_Name: PushGlove
   m_TagString: Player2Glove
@@ -121,7 +121,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &1358801759741016776
+--- !u!114 &878620666300960596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 156962264933139189}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8164cc9a3b0f1684790dd5b47f43e300, type: 3}
+  m_Script: {fileID: 11500000, guid: 52f549cbe9625b448b574e3b47b7122f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Player1PushPower: 0
@@ -148,9 +148,9 @@ GameObject:
   - component: {fileID: 597831123711452272}
   - component: {fileID: 4720181211093819336}
   - component: {fileID: 6720884289208046234}
-  - component: {fileID: 3488821981173028545}
   - component: {fileID: 1032038151293346153}
   - component: {fileID: 7798426047773922036}
+  - component: {fileID: 5511220444967369010}
   m_Layer: 0
   m_Name: Player2Grab
   m_TagString: Player2Grab
@@ -260,24 +260,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &3488821981173028545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697961810642198131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd1f68f43d93354192bb149a1e3d632, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  addtargetPos: {x: 19, y: 0, z: 0}
-  moveSpeed: 0
-  holdGrab: 0
-  grabing: 0
-  targetingable: 0
 --- !u!114 &1032038151293346153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,8 +338,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
-      key1: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -372,7 +354,7 @@ LineRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 193
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -395,6 +377,24 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &5511220444967369010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697961810642198131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aceecdc73403a01448741804bb32c633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  addtargetPos: {x: 19, y: 0, z: 0}
+  moveSpeed: 0
+  holdGrab: 0
+  grabing: 0
+  targetingable: 0
 --- !u!1 &3041792906590884942
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,9 +579,9 @@ GameObject:
   - component: {fileID: 2947528663607017255}
   - component: {fileID: 2076225279733813041}
   - component: {fileID: 6162978885116754932}
-  - component: {fileID: 4039724161601141327}
   - component: {fileID: 6179470706884604105}
-  - component: {fileID: 6366993331470929397}
+  - component: {fileID: 6917252518115355943}
+  - component: {fileID: 371251718371443510}
   m_Layer: 0
   m_Name: Player2
   m_TagString: interactive
@@ -721,27 +721,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.12}
   m_Size: {x: 1.1666666, y: 2.3333333}
   m_Direction: 0
---- !u!114 &4039724161601141327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4431981760241475816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 600e60e0b38e4c94092df34e12e7ca28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  x: 0
-  jumpAble: 1
-  Push: 0
-  flip: 0
-  pushCharge: 0
-  maxPushCharge: 35
-  chargeTime: 2
-  RotSpeed: 2
 --- !u!95 &6179470706884604105
 Animator:
   serializedVersion: 5
@@ -763,7 +742,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6366993331470929397
+--- !u!114 &6917252518115355943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -772,7 +751,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4431981760241475816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fafc4eec05ab44545848cf2856d74f90, type: 3}
+  m_Script: {fileID: 11500000, guid: a53e803e6e6fe90448b606061e32d7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  x: 0
+  jumpAble: 1
+  Push: 0
+  flip: 0
+  pushCharge: 0
+  maxPushCharge: 35
+  chargeTime: 1
+  RotSpeed: 1
+  <IsGamePad>k__BackingField: 0
+--- !u!114 &371251718371443510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431981760241475816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6377504b1090549b09a6e03045381f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6303704487815274500
@@ -818,7 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3688491286796267646}
   - component: {fileID: 5126893732876875431}
-  - component: {fileID: 8643818504210518817}
+  - component: {fileID: 3185291710766708059}
   m_Layer: 0
   m_Name: GroundChecker
   m_TagString: Player2
@@ -886,7 +887,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &8643818504210518817
+--- !u!114 &3185291710766708059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -895,7 +896,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6565915154259721497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7a44ef7fed1e64497f9e3a58853df8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7acf2e62823e9a047bdbaf8daa2098ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8887493415864025470
