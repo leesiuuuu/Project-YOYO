@@ -12,18 +12,31 @@ public class HoverMove : MonoBehaviour, ISelectHandler, IDeselectHandler
 	public Tilemap tMap;
 
 	public CanvasGroup CG;
+	public bool isSelected = false;
 
-	public void OnDeselect(BaseEventData eventData)
+	private void Start()
+	{
+		Deselect();
+	}
+
+	public void Deselect()
 	{
 		StartCoroutine(Scale(new Vector3(1f, 1f, 1f)));
-		StartCoroutine(Color(new UnityEngine.Color(1f,1f,1f,0.5f)));
-		StartCoroutine(Color(new UnityEngine.Color(1f,1f,1f,0.5f)));
+		StartCoroutine(Color(new UnityEngine.Color(1f, 1f, 1f, 0.5f)));
+		StartCoroutine(CanvasAlpha(0.5f));
+		isSelected = false;
+	}
+	public void OnDeselect(BaseEventData eventData)
+	{
+		Deselect();
 	}
 
 	public void OnSelect(BaseEventData eventData)
 	{
 		StartCoroutine(Scale(new Vector3(1.05f, 1.05f, 1.05f)));
 		StartCoroutine(Color(new UnityEngine.Color(1f, 1f, 1f, 1f)));
+		StartCoroutine(CanvasAlpha(1f));
+		isSelected = true;
 	}
 
 	private IEnumerator Scale(Vector3 size)

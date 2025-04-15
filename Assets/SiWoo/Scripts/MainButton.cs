@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainButton : MonoBehaviour, ISelectHandler
 {
 	public GameObject Panel;
+	public Button Back;
+	public Selectable LastBtns;
 	public void LoadSetting()
 	{
 		CanvasGroup[] others = FindObjectsOfType<CanvasGroup>();
@@ -13,6 +16,9 @@ public class MainButton : MonoBehaviour, ISelectHandler
 			{
 				others[o].alpha = 1;
 				others[o].interactable = true;
+				Navigation n = Back.navigation;
+				n.selectOnUp = LastBtns;
+				Back.navigation = n;
 				continue;
 			}
 
@@ -30,6 +36,9 @@ public class MainButton : MonoBehaviour, ISelectHandler
 			{
 				others[o].alpha = 1;
 				others[o].interactable = true;
+				Navigation n = Back.navigation;
+				n.selectOnUp = LastBtns;
+				Back.navigation = n;
 				continue;
 			}
 
