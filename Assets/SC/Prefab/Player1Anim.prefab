@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2511136125364709699}
   - component: {fileID: 3021743842668156994}
   - component: {fileID: 3462365508656375270}
-  - component: {fileID: 2349340624779059968}
+  - component: {fileID: 1440435759003594382}
   m_Layer: 0
   m_Name: PushGlove
   m_TagString: Player1Glove
@@ -238,7 +238,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &2349340624779059968
+--- !u!114 &1440435759003594382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1980947202007950062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8164cc9a3b0f1684790dd5b47f43e300, type: 3}
+  m_Script: {fileID: 11500000, guid: 52f549cbe9625b448b574e3b47b7122f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Player1PushPower: 0
@@ -402,7 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6780207171042961930}
   - component: {fileID: 4517694350754390460}
-  - component: {fileID: 1951712893455637467}
+  - component: {fileID: 8455318852965131937}
   m_Layer: 0
   m_Name: GroundChecker
   m_TagString: Player1
@@ -470,7 +470,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &1951712893455637467
+--- !u!114 &8455318852965131937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4920461210755765445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7a44ef7fed1e64497f9e3a58853df8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7acf2e62823e9a047bdbaf8daa2098ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5957658415821652442
@@ -494,9 +494,9 @@ GameObject:
   - component: {fileID: 4771017436887937753}
   - component: {fileID: 2297168085484696437}
   - component: {fileID: 2166529781873821434}
-  - component: {fileID: 964600464670166913}
   - component: {fileID: 1741260105556747326}
-  - component: {fileID: 4550027047241370268}
+  - component: {fileID: 7291468092889358915}
+  - component: {fileID: 7364534586887187187}
   m_Layer: 0
   m_Name: Player1
   m_TagString: interactive
@@ -636,28 +636,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.1666666, y: 2.3333333}
   m_Direction: 0
---- !u!114 &964600464670166913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5957658415821652442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41dc75e67961f2449a783b6fe04be035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  x: 0
-  jumpAble: 1
-  Push: 0
-  flip: 1
-  pushCharge: 0
-  maxPushCharge: 35
-  chargeTime: 2
-  RotSpeed: 2
-  maxAngle: 20
 --- !u!95 &1741260105556747326
 Animator:
   serializedVersion: 5
@@ -679,7 +657,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4550027047241370268
+--- !u!114 &7291468092889358915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -688,7 +666,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 5957658415821652442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7e2a393058fc25418dbf9c426d0455c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9adaa15af04de2042b0dc6e72ac748b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  x: 0
+  jumpAble: 1
+  Push: 0
+  flip: 1
+  pushCharge: 0
+  maxPushCharge: 35
+  chargeTime: 1
+  RotSpeed: 1
+  maxAngle: 20
+  <IsGamePad>k__BackingField: 0
+--- !u!114 &7364534586887187187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957658415821652442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6b1e1c27e8feb4fb413b5a8905990a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7584924731549817808
@@ -820,9 +821,9 @@ GameObject:
   - component: {fileID: 5336744283988435214}
   - component: {fileID: 199772659164992566}
   - component: {fileID: 7206595477650376632}
-  - component: {fileID: 3621576766289961595}
   - component: {fileID: 8842662754173210181}
   - component: {fileID: 762826472802105137}
+  - component: {fileID: 2785752184826696640}
   m_Layer: 0
   m_Name: Player1Grab
   m_TagString: Player1Grab
@@ -932,24 +933,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &3621576766289961595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8843413771265551329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18491e664c24cc47921e762a8c72731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  addtargetPos: {x: 19, y: 0, z: 0}
-  moveSpeed: 0
-  holdGrab: 0
-  grabing: 0
-  targetingable: 0
 --- !u!114 &8842662754173210181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,8 +1011,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
-      key1: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1044,7 +1027,7 @@ LineRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 193
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -1067,3 +1050,21 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &2785752184826696640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843413771265551329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be002e67fae31be45a40fd3c88ab4e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  addtargetPos: {x: 19, y: 0, z: 0}
+  moveSpeed: 0
+  holdGrab: 0
+  grabing: 0
+  targetingable: 0
