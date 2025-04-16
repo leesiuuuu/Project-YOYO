@@ -6,7 +6,7 @@ public class KeyCounter : MonoBehaviour
     [SerializeField]
     private List<Key> _keys = new List<Key>();
 
-    private static int _keyCount = 0;
+    public static int KeyCount { get; private set; } = 0;
     private static int _maxCount = 0;
 
     private void Awake()
@@ -22,15 +22,15 @@ public class KeyCounter : MonoBehaviour
 
     public static void AddCount(int amount = 1)
     {
-        if (_keyCount + amount <= _maxCount)
-            _keyCount += amount;
+        if (KeyCount + amount <= _maxCount)
+            KeyCount += amount;
 
-        Debug.Log(_keyCount);
+        Debug.Log(KeyCount);
     }
 
     public static void ResetCount()
     {
-        _keyCount = 0;
+        KeyCount = 0;
         _maxCount = 0;
     }
 }
