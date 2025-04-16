@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class NewPlayer1 : MonoBehaviour
@@ -84,14 +83,14 @@ public class NewPlayer1 : MonoBehaviour
 
             if (Input.GetButtonDown("Push1"))
             {
-                Debug.Log("Â÷Áö ½ÃÀÛ");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 
                 isCharging = true;
                 pushCharge = 0;
             }
             if (Input.GetButton("Push1") && isCharging)
             {
-                Debug.Log("Â÷Â¡ Áß");
+                Debug.Log("ï¿½ï¿½Â¡ ï¿½ï¿½");
 
                 pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
                 if (pushCharge > maxPushCharge)
@@ -101,7 +100,7 @@ public class NewPlayer1 : MonoBehaviour
             }
             if (Input.GetButtonUp("Push1") && isCharging)
             {
-                Debug.Log("Â÷Â¡ ³¡");
+                Debug.Log("ï¿½ï¿½Â¡ ï¿½ï¿½");
 
                 isCharging = false;
                 Push = true;
@@ -200,14 +199,14 @@ public class NewPlayer1 : MonoBehaviour
         {
             if (Input.GetButtonDown("Pull1"))
             {
-                Debug.Log("±×·¦ Â÷Â¡ ½ÃÀÛ");
+                Debug.Log("ï¿½×·ï¿½ ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½ï¿½");
                 RPressTime = Time.time;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (Input.GetButton("Pull1"))
             {
-                Debug.Log("±×·¦ Â÷Â¡ Áß");
+                Debug.Log("ï¿½×·ï¿½ ï¿½ï¿½Â¡ ï¿½ï¿½");
 
                 if (Time.time - RPressTime >= .5f)
                 {
@@ -224,7 +223,7 @@ public class NewPlayer1 : MonoBehaviour
             if (Input.GetButtonUp("Pull1"))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("±×·¦ Â÷Â¡ ³¡");
+                Debug.Log("ï¿½×·ï¿½ ï¿½ï¿½Â¡ ï¿½ï¿½");
             }
         }
     }
