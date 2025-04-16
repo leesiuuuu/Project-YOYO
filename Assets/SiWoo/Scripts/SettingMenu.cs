@@ -1,5 +1,3 @@
-using UnityEditor.ShaderGraph;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -24,6 +22,13 @@ public class SettingMenu : MonoBehaviour
     //0 = 키보드 선택 모드
     //1 = 콘솔 선택 모드
     private int ControlMode;
+	private void Start()
+	{
+		if(GetComponent<Canvas>().worldCamera == null)
+        {
+            GetComponent<Canvas>().worldCamera = Camera.main;
+        }
+	}
 	private void OnEnable()
 	{
         GetComponent<Canvas>().worldCamera = FindObjectOfType<Camera>();
