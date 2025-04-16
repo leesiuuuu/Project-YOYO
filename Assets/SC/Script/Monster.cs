@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -28,6 +29,14 @@ public class Monster : MonoBehaviour
             {
                 transform.position += (desPos - transform.position).normalized * speed * Time.deltaTime;
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 7)
+        {
+            desPos = desPos == pos1 ? pos2 : pos1;
         }
     }
 }
