@@ -9,11 +9,14 @@ public class LockFocus : MonoBehaviour
 	void Update()
 	{
 		// 선택 상태 유지
-		if (!EventSystem.current.currentSelectedGameObject)
+		if (FindObjectOfType<EventSystem>() != null)
 		{
-			EventSystem.current.SetSelectedGameObject(defaultSelected);
+			if (!EventSystem.current.currentSelectedGameObject)
+			{
+				EventSystem.current.SetSelectedGameObject(defaultSelected);
+			}
+			defaultSelected = EventSystem.current.currentSelectedGameObject;
 		}
-		defaultSelected = EventSystem.current.currentSelectedGameObject;
 	}
 
 }
