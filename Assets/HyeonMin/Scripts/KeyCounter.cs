@@ -6,13 +6,17 @@ public class KeyCounter : MonoBehaviour
     [SerializeField]
     private List<Key> _keys = new List<Key>();
 
-    public static int KeyCount { get; private set; } = 0;
-    private static int _maxCount = 0;
+    public int KeyCount { get; private set; } = 0;
+    public int _maxCount = 0;
+
+    public KeyCountUI countUI;
 
     private void Awake()
     {
+        ResetCount();
         Key[] currentKeys = FindObjectsOfType<Key>();
 
+        countUI = FindObjectOfType<KeyCountUI>();
         foreach (var key in currentKeys)
         {
             _keys.Add(key);
@@ -20,15 +24,16 @@ public class KeyCounter : MonoBehaviour
         _maxCount = _keys.Count;
     }
 
-    public static void AddCount(int amount = 1)
+    public void AddCount(int amount = 1)
     {
         if (KeyCount + amount <= _maxCount)
             KeyCount += amount;
 
+        countUI.SetCountText();
         Debug.Log(KeyCount);
     }
 
-    public static void ResetCount()
+    public void ResetCount()
     {
         KeyCount = 0;
         _maxCount = 0;

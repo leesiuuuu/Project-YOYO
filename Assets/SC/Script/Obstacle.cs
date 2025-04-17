@@ -5,15 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class Obstacle : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    LevelLoader levelLoader;
+
+    private void Start()
     {
-        if(collision.GetComponent<Player1>() != null)
+        levelLoader = FindObjectOfType<LevelLoader>();
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<NewPlayer1>(out var player1))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            player1.Die();
+            levelLoader.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if(collision.GetComponent<Player2>() != null)
+        else if (collision.gameObject.TryGetComponent<NewPlayer2>(out var player2))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            player2.Die();
+            levelLoader.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
