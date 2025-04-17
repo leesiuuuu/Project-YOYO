@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
+
 	[SerializeField]
 	private Animator animator;
 

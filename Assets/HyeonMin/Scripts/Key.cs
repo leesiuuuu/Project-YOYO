@@ -7,9 +7,14 @@ public interface IGetable
 
 public class Key : MonoBehaviour, IGetable
 {
+    KeyCounter counter;
+    void Start()
+    {
+        counter = FindObjectOfType<KeyCounter>();
+    }
     public void Get()
     {
-        KeyCounter.AddCount();
+        counter.AddCount();
         Destroy(gameObject);
     }
 }

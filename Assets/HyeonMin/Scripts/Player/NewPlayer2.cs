@@ -20,6 +20,8 @@ public class NewPlayer2 : MonoBehaviour
 
     public bool flip;
 
+    bool die;
+
     public float pushCharge = 0f;
     public float maxPushCharge = 35f;
     public float chargeTime = 1f;
@@ -46,6 +48,8 @@ public class NewPlayer2 : MonoBehaviour
 
     private void Update()
     {
+        if (die)
+            return;
         if (!grab.grabing)
         {
             GrabRot();
@@ -119,7 +123,8 @@ public class NewPlayer2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (die)
+            return;
         if (!grab.grabing)
         {
             if (x > 0 && flip)
@@ -186,6 +191,7 @@ public class NewPlayer2 : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Period))
             {
+                Debug.Log($"{Time.time - RPressTime}");
                 if (Time.time - RPressTime >= .5f)
                 {
                     float elapsed = Time.time - RPressTime - .5f;
@@ -235,4 +241,10 @@ public class NewPlayer2 : MonoBehaviour
             }
         }
      }
+
+    public void Die()
+    {
+        anim.Play("Die");
+        die = true;
+    }
 }
