@@ -191,7 +191,6 @@ public class NewPlayer2 : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Period))
             {
-                Debug.Log($"{Time.time - RPressTime}");
                 if (Time.time - RPressTime >= .5f)
                 {
                     float elapsed = Time.time - RPressTime - .5f;
