@@ -1135,6 +1135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keys: []
+  _maxCount: 0
+  countUI: {fileID: 0}
 --- !u!4 &230193591
 Transform:
   m_ObjectHideFlags: 0
@@ -1201,6 +1203,14 @@ PrefabInstance:
     - target: {fileID: 2113984137911719049, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
       propertyPath: m_Name
       value: Player1Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640485215247383003, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640485215247383003, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1622,6 +1632,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2808743513471624076, guid: 0ceba5c893be4264da73426a2a5044f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808743513471624076, guid: 0ceba5c893be4264da73426a2a5044f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.31
+      objectReference: {fileID: 0}
     - target: {fileID: 4331435090566102920, guid: 0ceba5c893be4264da73426a2a5044f8, type: 3}
       propertyPath: m_Name
       value: Player2Anim
