@@ -21,8 +21,11 @@ public static class KeySetting
 
 public class KeyManager : MonoBehaviour
 {
-    [field:SerializeField]
+    public static KeyManager Instance { get; private set; }
+
+    [field: SerializeField]
     public GameObject CheckSelectPanel { get; private set; }
+
     [SerializeField] private UI_CheckSelectKey _checkSelectKeyUI;
 
     [SerializeField]
@@ -47,10 +50,22 @@ public class KeyManager : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < (int)KeyAction.KEYCOUNT; i++)
+        if (Instance != null && Instance != this)
         {
-            KeySetting.player1Keys.Add((KeyAction)i, _player1DefaultKeys[i]);
-            KeySetting.player2Keys.Add((KeyAction)i, _player2DefaultKeys[i]);
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        if (KeySetting.player1Keys.Count == 0 && KeySetting.player2Keys.Count == 0)
+        {
+            for (int i = 0; i < (int)KeyAction.KEYCOUNT; i++)
+            {
+                KeySetting.player1Keys[(KeyAction)i] = _player1DefaultKeys[i];
+                KeySetting.player2Keys[(KeyAction)i] = _player2DefaultKeys[i];
+            }
         }
     }
 

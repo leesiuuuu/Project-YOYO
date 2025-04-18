@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c125b663c9162e45ad9c1485794b887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SettingPrefab: {fileID: 736782780120300944, guid: 1d823890220aed1459b27f5cc88658d7, type: 3}
+  SettingPrefab: {fileID: 6825196635509450729, guid: f18681cf67644b941899842ea3890b8b, type: 3}
   clearUIs:
   - {fileID: 8261461493150149250}
   - {fileID: 2701785913682077446}

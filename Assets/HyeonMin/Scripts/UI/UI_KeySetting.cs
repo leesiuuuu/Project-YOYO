@@ -18,6 +18,11 @@ public class UI_KeySetting : MonoBehaviour
         SetUpButtons();
     }
 
+    private void OnEnable()
+    {
+        _keyManager = FindAnyObjectByType<KeyManager>();
+    }
+
     private void Update()
     {
         UpdateKeyTexts();
