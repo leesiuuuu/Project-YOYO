@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 	}
 	public void Update()
 	{
-		if (Input.anyKeyDown && !isBtnSelected)
+		if (Input.anyKey && !isBtnSelected)
 		{
 			btn.Select();
 			isBtnSelected = true;
