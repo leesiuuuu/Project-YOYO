@@ -58,6 +58,9 @@ public class SettingMenu : MonoBehaviour
         ChangeButtonColor(1, true);
         ChangeButtonColor(0, false);
 
+        KeySetting.IsGamePad = true;
+        Debug.Log(KeySetting.IsGamePad);
+
         ControlMode = 1;
         PlayerPrefs.SetInt("ControlMode", ControlMode);
     }
@@ -65,6 +68,9 @@ public class SettingMenu : MonoBehaviour
     {
         ChangeButtonColor(0, true);
         ChangeButtonColor(1, false);
+
+        KeySetting.IsGamePad = false;
+        Debug.Log(KeySetting.IsGamePad);
 
         ControlMode = 0;
 		PlayerPrefs.SetInt("ControlMode", ControlMode);

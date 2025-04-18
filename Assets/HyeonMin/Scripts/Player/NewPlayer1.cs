@@ -25,9 +25,6 @@ public class NewPlayer1 : MonoBehaviour
     [SerializeField] private float RotSpeed = 1f;
     public float maxAngle = 20f;
 
-    [field: Header("IsGamePad"), SerializeField]
-    public bool IsGamePad { get; set; } = false;
-
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -48,14 +45,14 @@ public class NewPlayer1 : MonoBehaviour
 
         glove.player1PushPower = pushCharge;
 
-        if (!IsGamePad)
+        if (!KeySetting.IsGamePad)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeySetting.player1Keys[KeyAction.PUSH]))
             {
                 isCharging = true;
                 pushCharge = 0f;
             }
-            if (Input.GetKey(KeyCode.E) && isCharging)
+            if (Input.GetKey(KeySetting.player1Keys[KeyAction.PUSH]) && isCharging)
             {
                 pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
                 if (pushCharge > maxPushCharge)
@@ -63,13 +60,13 @@ public class NewPlayer1 : MonoBehaviour
                     pushCharge = maxPushCharge;
                 }
             }
-            if (Input.GetKeyUp(KeyCode.E) && isCharging)
+            if (Input.GetKeyUp(KeySetting.player1Keys[KeyAction.PUSH]) && isCharging)
             {
                 isCharging = false;
                 Push = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.W) && jumpAble)
+            if (Input.GetKeyDown(KeySetting.player1Keys[KeyAction.Jump]) && jumpAble)
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
@@ -87,14 +84,11 @@ public class NewPlayer1 : MonoBehaviour
 
             if (Input.GetButtonDown("Push1"))
             {
-                Debug.Log("���� ����");
-
                 isCharging = true;
                 pushCharge = 0;
             }
             if (Input.GetButton("Push1") && isCharging)
             {
-                Debug.Log("��¡ ��");
 
                 pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
                 if (pushCharge > maxPushCharge)
@@ -104,8 +98,6 @@ public class NewPlayer1 : MonoBehaviour
             }
             if (Input.GetButtonUp("Push1") && isCharging)
             {
-                Debug.Log("��¡ ��");
-
                 isCharging = false;
                 Push = true;
             }
@@ -115,11 +107,15 @@ public class NewPlayer1 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool left = Input.GetKey(KeySetting.player1Keys[KeyAction.LEFT]);
+        bool right = Input.GetKey(KeySetting.player1Keys[KeyAction.RIGHT]);
+
+        if (Time.timeScale == 0)
+            return;
         if (cantMove)
             return;
         if (!grab.grabing)
         {
-
             if (x > 0 && flip)
             {
                 Flip();
@@ -130,17 +126,19 @@ public class NewPlayer1 : MonoBehaviour
             }
         }
 
-        if (!IsGamePad)
+        if (!KeySetting.IsGamePad)
         {
-            x = (int)Input.GetAxisRaw("Horizontal1");
+            if (right && !left) x = 1;
+            else if (left && !right) x = -1;
+            else x = 0;
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeySetting.player1Keys[KeyAction.LEFT]))
             {
                 transform.Translate(moveSpeed * -1f * Time.deltaTime, 0, 0);
                 if (jumpAble)
                     anim.Play("Move");
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeySetting.player1Keys[KeyAction.RIGHT]))
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
                 if (jumpAble)
@@ -173,15 +171,15 @@ public class NewPlayer1 : MonoBehaviour
 
     public void GrabRot()
     {
-        if (!IsGamePad)
+        if (!KeySetting.IsGamePad)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeySetting.player1Keys[KeyAction.PULL]))
             {
                 RPressTime = Time.time;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKey(KeySetting.player1Keys[KeyAction.PULL]))
             {
                 if (Time.time - RPressTime >= .5f)
                 {
@@ -195,7 +193,7 @@ public class NewPlayer1 : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.R))
+            if (Input.GetKeyUp(KeySetting.player1Keys[KeyAction.PULL]))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
@@ -204,7 +202,6 @@ public class NewPlayer1 : MonoBehaviour
         {
             if (Input.GetButtonDown("Pull1"))
             {
-                Debug.Log("�׷� ��¡ ����");
                 RPressTime = Time.time;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
@@ -228,7 +225,6 @@ public class NewPlayer1 : MonoBehaviour
             if (Input.GetButtonUp("Pull1"))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("�׷� ��¡ ��");
             }
         }
     }

@@ -40,9 +40,9 @@ public class NewPlayer1Grab : MonoBehaviour
             Target = null;
         }
 
-        if (!player.IsGamePad)
+        if (!KeySetting.IsGamePad)
         {
-            if (Input.GetKeyUp(KeyCode.R) && grabing == false)
+            if (Input.GetKeyUp(KeySetting.player1Keys[KeyAction.PULL]) && grabing == false)
             {
                 StartCoroutine(GoGrab());
                 grabing = true;
