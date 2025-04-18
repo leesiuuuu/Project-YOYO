@@ -22,7 +22,7 @@ public class CreditMove : MonoBehaviour
 		float timer = 0f;
 		float duration = 30f;
 		Vector2 start = new Vector2(0, 0);
-		Vector2 end = new Vector2(0, 5400);
+		Vector2 end = new Vector2(0, 5866);
 		RectTransform rt = GetComponent<RectTransform>();
 
 		while (timer < duration)
