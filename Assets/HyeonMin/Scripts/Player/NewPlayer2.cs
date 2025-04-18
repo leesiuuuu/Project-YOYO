@@ -93,14 +93,14 @@ public class NewPlayer2 : MonoBehaviour
 
             if (Input.GetButtonDown("Push2"))
             {
-                Debug.Log("Â÷Áö ½ÃÀÛ");
+                Debug.Log("ì°¨ì§€ ì‹œì‘");
 
                 isCharging = true;
                 pushCharge = 0;
             }
             if (Input.GetButton("Push2") && isCharging)
             {
-                Debug.Log("Â÷Â¡ Áß");
+                Debug.Log("ì°¨ì§• ì¤‘");
 
                 pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
                 if (pushCharge > maxPushCharge)
@@ -110,7 +110,7 @@ public class NewPlayer2 : MonoBehaviour
             }
             if (Input.GetButtonUp("Push2") && isCharging)
             {
-                Debug.Log("Â÷Â¡ ³¡");
+                Debug.Log("ì°¨ì§• ë");
 
                 isCharging = false;
                 Push = true;
@@ -216,14 +216,14 @@ public class NewPlayer2 : MonoBehaviour
         {
             if (Input.GetButtonDown("Pull2"))
             {
-                Debug.Log("±×·¦ Â÷Â¡ ½ÃÀÛ");
+                Debug.Log("ê·¸ë© ì°¨ì§• ì‹œì‘");
                 RPressTime = Time.time;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (Input.GetButton("Pull2"))
             {
-                Debug.Log("±×·¦ Â÷Â¡ Áß");
+                Debug.Log("ê·¸ë© ì°¨ì§• ì¤‘");
 
                 if (Time.time - RPressTime >= .5f)
                 {
@@ -240,7 +240,7 @@ public class NewPlayer2 : MonoBehaviour
             if (Input.GetButtonUp("Pull2"))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("±×·¦ Â÷Â¡ ³¡");
+                Debug.Log("ê·¸ë© ì°¨ì§• ë");
             }
         }
      }

@@ -531,6 +531,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1652226760675593840, guid: e42d4e3f8033e0a46b4a843f83a06d8b, type: 3}
+      propertyPath: m_Size.y
+      value: 10.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652226760675593840, guid: e42d4e3f8033e0a46b4a843f83a06d8b, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.72
+      objectReference: {fileID: 0}
     - target: {fileID: 1826577773728813360, guid: e42d4e3f8033e0a46b4a843f83a06d8b, type: 3}
       propertyPath: m_Name
       value: Fan (1)

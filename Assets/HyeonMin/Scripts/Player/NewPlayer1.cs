@@ -36,7 +36,6 @@ public class NewPlayer1 : MonoBehaviour
 
     private void Update()
     {
-
         if (cantMove)
             return;
         if (!grab.grabing)
