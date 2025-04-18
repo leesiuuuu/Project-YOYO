@@ -31,6 +31,40 @@ public class UI_CheckSelectKey : MonoBehaviour
             {
                 if (Input.GetKeyDown(code))
                 {
+                    // 중복 검사
+                    bool isDuplicate = false;
+
+                    if (_playerType == PlayerType.Player1)
+                    {
+                        foreach (var key in KeySetting.player1Keys.Values)
+                        {
+                            if (key == code)
+                            {
+                                isDuplicate = true;
+
+                                _keyManager.CheckSelectPanel.SetActive(false);
+                                break;
+                            }
+                        }
+                    }
+                    else if (_playerType == PlayerType.Player2)
+                    {
+                        foreach (var key in KeySetting.player2Keys.Values)
+                        {
+                            if (key == code)
+                            {
+                                isDuplicate = true;
+                                _keyManager.CheckSelectPanel.SetActive(false);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (isDuplicate)
+                    {
+                        return;
+                    }
+
                     _getCode = code;
                     _waitingForKey = false;
                     gameObject.SetActive(false);
@@ -40,12 +74,10 @@ public class UI_CheckSelectKey : MonoBehaviour
                         if (_playerType == PlayerType.Player1)
                         {
                             _keyManager.OnPlayer1ChangeKey(_getCode, _keyIndex);
-                            Debug.Log($"플레이어 1 변경된 키: {_getCode}, 인덱스: {_keyIndex}");
                         }
-                        else if ( _playerType == PlayerType.Player2)
+                        else if (_playerType == PlayerType.Player2)
                         {
                             _keyManager.OnPlayer2ChangeKey(_getCode, _keyIndex);
-                            Debug.Log($"플레이어 1 변경된 키: {_getCode}, 인덱스: {_keyIndex}");
                         }
                     }
 
@@ -54,6 +86,7 @@ public class UI_CheckSelectKey : MonoBehaviour
             }
         }
     }
+
 
     public void SetKeyIndex(int index)
     {

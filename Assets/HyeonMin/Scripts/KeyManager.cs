@@ -15,11 +15,14 @@ public static class KeySetting
 {
     public static Dictionary<KeyAction, KeyCode> player1Keys = new Dictionary<KeyAction, KeyCode>();
     public static Dictionary<KeyAction, KeyCode> player2Keys = new Dictionary<KeyAction, KeyCode>();
+
+    public static bool IsGamePad { get; set; } = false;
 }
 
 public class KeyManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _checkSelectPanel;
+    [field:SerializeField]
+    public GameObject CheckSelectPanel { get; private set; }
     [SerializeField] private UI_CheckSelectKey _checkSelectKeyUI;
 
     [SerializeField]
@@ -53,12 +56,12 @@ public class KeyManager : MonoBehaviour
 
     private void Start()
     {
-        _checkSelectPanel?.SetActive(false);
+        CheckSelectPanel?.SetActive(false);
     }
 
     public void OnChangeKey(PlayerType playerType, int index)
     {
-        _checkSelectPanel.SetActive(true);
+        CheckSelectPanel.SetActive(true);
         _checkSelectKeyUI.SetPlayerType(playerType);
         _checkSelectKeyUI.SetKeyIndex(index);
     }
