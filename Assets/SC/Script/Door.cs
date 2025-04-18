@@ -8,9 +8,15 @@ public class Door : MonoBehaviour
     bool enteredPlayer1;
     bool enteredPlayer2;
 
+    public bool isCleared;
+
     int keyCount;
+    [SerializeField] GameObject clearUI;
     LevelLoader levelLoader;
     KeyCounter keyCounter;
+
+    NewPlayer1 player1;
+    NewPlayer2 player2;
 
     private void Start()
     {
@@ -22,17 +28,19 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<NewPlayer1>() != null)
+        if(collision.TryGetComponent<NewPlayer1>(out var player1))
         {
             enteredPlayer1 = true;
+            this.player1 = player1;
         }
-        if(collision.GetComponent<NewPlayer2>() != null)
+        if(collision.TryGetComponent<NewPlayer2>(out var player2))
         {
             enteredPlayer2 = true;
+            this.player2 = player2;
         }
 
         if (enteredPlayer1 && enteredPlayer2)
-            NextStage();
+            StartCoroutine(NextStage());
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,11 +55,18 @@ public class Door : MonoBehaviour
         }
     }
 
-    void NextStage()
+    IEnumerator NextStage()
     {
+        if (isCleared)
+            yield break;
+
         if(keyCounter.KeyCount == keyCount)
         {
-            levelLoader.LoadNextLevel(SceneManager.GetActiveScene().buildIndex);
+            isCleared = true;
+            player1.Cleared();
+            player2.Cleared();
+            yield return new WaitForSeconds(1.5f);
+            clearUI.SetActive(true);
         }
     }
 }
