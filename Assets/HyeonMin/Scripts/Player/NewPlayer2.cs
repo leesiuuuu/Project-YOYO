@@ -20,7 +20,7 @@ public class NewPlayer2 : MonoBehaviour
 
     public bool flip;
 
-    bool die;
+    public bool cantMove;
 
     public float pushCharge = 0f;
     public float maxPushCharge = 35f;
@@ -48,7 +48,7 @@ public class NewPlayer2 : MonoBehaviour
 
     private void Update()
     {
-        if (die)
+        if (cantMove)
             return;
         if (!grab.grabing)
         {
@@ -123,7 +123,7 @@ public class NewPlayer2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (die)
+        if (cantMove)
             return;
         if (!grab.grabing)
         {
@@ -244,6 +244,12 @@ public class NewPlayer2 : MonoBehaviour
     public void Die()
     {
         anim.Play("Die");
-        die = true;
+        cantMove = true;
+    }
+
+    public void Cleared()
+    {
+        cantMove = true;
+        anim.Play("Cleared");
     }
 }
