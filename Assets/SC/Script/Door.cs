@@ -66,7 +66,7 @@ public class Door : MonoBehaviour
             player1.Cleared();
             player2.Cleared();
             yield return new WaitForSeconds(1.5f);
-            Instantiate(clearUI,transform);
+            clearUI.SetActive(true);
         }
     }
 }
