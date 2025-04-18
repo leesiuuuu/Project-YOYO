@@ -19,6 +19,8 @@ public class NewPlayer1 : MonoBehaviour
     public float chargeTime = 1f;
     private bool isCharging = false;
 
+    public bool cantMove;
+
     private float RPressTime = 0f;
     [SerializeField] private float RotSpeed = 1f;
     public float maxAngle = 20f;
@@ -37,6 +39,8 @@ public class NewPlayer1 : MonoBehaviour
 
     private void Update()
     {
+        if (cantMove)
+            return;
         if (!grab.grabing)
         {
             GrabRot();
@@ -111,7 +115,8 @@ public class NewPlayer1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (cantMove)
+            return;
         if (!grab.grabing)
         {
 
@@ -206,7 +211,7 @@ public class NewPlayer1 : MonoBehaviour
 
             if (Input.GetButton("Pull1"))
             {
-                Debug.Log("�׷� ��¡ ��");
+                Debug.Log($"{Time.time - RPressTime}");
 
                 if (Time.time - RPressTime >= .5f)
                 {
@@ -226,5 +231,17 @@ public class NewPlayer1 : MonoBehaviour
                 Debug.Log("�׷� ��¡ ��");
             }
         }
+    }
+
+    public void Die()
+    {
+        anim.Play("Die");
+        cantMove = true;
+    }
+
+    public void Cleared()
+    {
+        cantMove = true;
+        anim.Play("Cleared");
     }
 }

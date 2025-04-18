@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fcebc794cd805ab4ca1d8b1ebb5aa1c9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -214,7 +214,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96fac014ea6ee344e9b6bc53d87a7f7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 6179470706884604105}
   - component: {fileID: 6917252518115355943}
   - component: {fileID: 371251718371443510}
+  - component: {fileID: 2848484102928757496}
   m_Layer: 0
   m_Name: Player2
   m_TagString: interactive
@@ -598,7 +599,7 @@ Transform:
   m_GameObject: {fileID: 4431981760241475816}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1860166, y: 1.3412619, z: -0.14750034}
+  m_LocalPosition: {x: 17.24, y: -5.98, z: -0.14750034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -774,6 +775,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a6377504b1090549b09a6e03045381f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2848484102928757496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431981760241475816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5b30423f6e16d43bd9b9e3ae5e000e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6303704487815274500

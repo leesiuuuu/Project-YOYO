@@ -20,6 +20,8 @@ public class NewPlayer2 : MonoBehaviour
 
     public bool flip;
 
+    public bool cantMove;
+
     public float pushCharge = 0f;
     public float maxPushCharge = 35f;
     public float chargeTime = 1f;
@@ -46,6 +48,8 @@ public class NewPlayer2 : MonoBehaviour
 
     private void Update()
     {
+        if (cantMove)
+            return;
         if (!grab.grabing)
         {
             GrabRot();
@@ -119,7 +123,8 @@ public class NewPlayer2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (cantMove)
+            return;
         if (!grab.grabing)
         {
             if (x > 0 && flip)
@@ -235,4 +240,16 @@ public class NewPlayer2 : MonoBehaviour
             }
         }
      }
+
+    public void Die()
+    {
+        anim.Play("Die");
+        cantMove = true;
+    }
+
+    public void Cleared()
+    {
+        cantMove = true;
+        anim.Play("Cleared");
+    }
 }
