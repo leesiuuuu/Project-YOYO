@@ -123,6 +123,8 @@ public class NewPlayer2 : MonoBehaviour
         bool left = Input.GetKey(KeySetting.player2Keys[KeyAction.LEFT]);
         bool right = Input.GetKey(KeySetting.player2Keys[KeyAction.RIGHT]);
 
+        if (Time.timeScale == 0)
+            return;
         if (cantMove)
             return;
         if (!grab.grabing)
