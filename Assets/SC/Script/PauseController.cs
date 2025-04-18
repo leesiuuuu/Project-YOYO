@@ -19,7 +19,7 @@ public class PauseController : MonoBehaviour
         while (true)
         {
             yield return null;
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
             {
                 if(Time.timeScale == 1)
                 {
@@ -28,7 +28,7 @@ public class PauseController : MonoBehaviour
                 }
                 else if(Time.timeScale == 0)
                 {
-                    Destroy(go);
+                    go.GetComponent<PauseMenu>().Resume();
                     Time.timeScale = 1;
                 }
             }

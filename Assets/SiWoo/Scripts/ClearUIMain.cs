@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ClearUIMain : MonoBehaviour
@@ -10,9 +8,10 @@ public class ClearUIMain : MonoBehaviour
 	public Button lastbtn;
 	private bool isSelected = false;
 
+
 	private void Update()
 	{
-		if (Input.anyKeyDown && !isSelected)
+		if (Input.anyKey && !isSelected)
 		{
 			btns[0].Select();
 			isSelected = true;
@@ -22,5 +21,10 @@ public class ClearUIMain : MonoBehaviour
 	{
 		isSelected = false;
 		lastbtn.Select();
+	}
+	public void AddEvent(UnityAction ua)
+	{
+		btns[0].onClick.RemoveAllListeners();
+		btns[0].onClick.AddListener(ua);
 	}
 }
