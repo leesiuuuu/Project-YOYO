@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -17,6 +18,9 @@ public class SettingMenu : MonoBehaviour
 
     [SerializeField]
     private Color SelectedColor;
+
+    [SerializeField]
+    private Button Back;
 
     [SerializeField]
     //0 = 키보드 선택 모드
@@ -44,13 +48,11 @@ public class SettingMenu : MonoBehaviour
 		FirstSelectObj.GetComponent<MainButton>().LoadSetting();
 
 	}
-	void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            gameObject.SetActive(false);
-        }
-    }
+	private void OnDisable()
+	{
+		Destroy(gameObject);
+	}
+
     public void SetController()
     {
         ChangeButtonColor(1, true);
@@ -75,4 +77,10 @@ public class SettingMenu : MonoBehaviour
 
 		keyButton[btn].colors = cb;
 	}
+
+    public void AddEvent(UnityAction ua)
+    {
+        Back.onClick.RemoveAllListeners();
+        Back.onClick.AddListener(ua);
+    }
 }

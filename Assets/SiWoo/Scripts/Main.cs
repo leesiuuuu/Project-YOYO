@@ -10,7 +10,7 @@ public class Main : MonoBehaviour
 	public Button[] btns;
  	private void Update()
 	{
-		if (Input.anyKeyDown && !isSelected)
+		if (Input.anyKey && !isSelected)
 		{
 
 		}
