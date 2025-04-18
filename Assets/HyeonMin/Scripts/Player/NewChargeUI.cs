@@ -1,6 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -78,9 +75,9 @@ public class NewChargeUI : MonoBehaviour
         //ÁÖ¸Ô UI
         if (PushGlove1.activeSelf)
         {
-            if (!player1.IsGamePad)
+            if (!KeySetting.IsGamePad)
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetKey(KeySetting.player1Keys[KeyAction.PUSH]))
                 {
                     P1Gage.gameObject.SetActive(true);
                 }
@@ -105,9 +102,9 @@ public class NewChargeUI : MonoBehaviour
         //±×·¦ UI
         if (Player1Grab.activeSelf)
         {
-            if (!player1.IsGamePad)
+            if (!KeySetting.IsGamePad)
             {
-                if (Input.GetKey(KeyCode.R))
+                if (Input.GetKey(KeySetting.player1Keys[KeyAction.PULL]))
                 {
                     P1GrabRange.SetActive(true);
                 }
@@ -135,9 +132,9 @@ public class NewChargeUI : MonoBehaviour
         //ÁÖ¸Ô UI
         if (PushGlove2.activeSelf)
         {
-            if (!player2.IsGamePad)
+            if (!KeySetting.IsGamePad)
             {
-                if (Input.GetKey(KeyCode.Slash))
+                if (Input.GetKey(KeySetting.player2Keys[KeyAction.PUSH]))
                 {
                     P2Gage.gameObject.SetActive(true);
                 }
@@ -162,9 +159,9 @@ public class NewChargeUI : MonoBehaviour
         //±×·¦ UI
         if (Player2Grab.activeSelf)
         {
-            if (!player2.IsGamePad)
+            if (!KeySetting.IsGamePad)
             {
-                if (Input.GetKey(KeyCode.Period))
+                if (Input.GetKey(KeySetting.player2Keys[KeyAction.PULL]))
                 {
                     P2GrabRange.SetActive(true);
                 }

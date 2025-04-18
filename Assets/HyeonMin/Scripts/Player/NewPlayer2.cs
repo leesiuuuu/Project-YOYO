@@ -31,9 +31,6 @@ public class NewPlayer2 : MonoBehaviour
     [SerializeField] private float RotSpeed = 1f;
     private float maxAngle = 20f;
 
-    [field: Header("IsGamePad"), SerializeField]
-    public bool IsGamePad { get; set; } = false;
-
     private void Awake()
     {
         glove = GetComponentInChildren<NewPushGlove>();
@@ -57,14 +54,14 @@ public class NewPlayer2 : MonoBehaviour
 
         glove.player2PushPower = pushCharge;
 
-        if (!IsGamePad)
+        if (!KeySetting.IsGamePad)
         {
-            if (Input.GetKeyDown(KeyCode.Slash))
+            if (Input.GetKeyDown(KeySetting.player2Keys[KeyAction.PUSH]))
             {
                 isCharging = true;
                 pushCharge = 0f;
             }
-            if (Input.GetKey(KeyCode.Slash) && isCharging)
+            if (Input.GetKey(KeySetting.player2Keys[KeyAction.PUSH]) && isCharging)
             {
                 pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
                 if (pushCharge > maxPushCharge)
@@ -72,13 +69,13 @@ public class NewPlayer2 : MonoBehaviour
                     pushCharge = maxPushCharge;
                 }
             }
-            if (Input.GetKeyUp(KeyCode.Slash) && isCharging)
+            if (Input.GetKeyUp(KeySetting.player2Keys[KeyAction.PUSH]) && isCharging)
             {
                 isCharging = false;
                 Push = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) && jumpAble)
+            if (Input.GetKeyDown(KeySetting.player2Keys[KeyAction.Jump]) && jumpAble)
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
@@ -96,14 +93,14 @@ public class NewPlayer2 : MonoBehaviour
 
             if (Input.GetButtonDown("Push2"))
             {
-                Debug.Log("¬˜¡ˆ Ω√¿€");
+                Debug.Log("Ï∞®ÏßÄ ÏãúÏûë");
 
                 isCharging = true;
                 pushCharge = 0;
             }
             if (Input.GetButton("Push2") && isCharging)
             {
-                Debug.Log("¬˜¬° ¡ﬂ");
+                Debug.Log("Ï∞®Ïßï Ï§ë");
 
                 pushCharge += (maxPushCharge / chargeTime) * Time.deltaTime;
                 if (pushCharge > maxPushCharge)
@@ -113,7 +110,7 @@ public class NewPlayer2 : MonoBehaviour
             }
             if (Input.GetButtonUp("Push2") && isCharging)
             {
-                Debug.Log("¬˜¬° ≥°");
+                Debug.Log("Ï∞®Ïßï ÎÅù");
 
                 isCharging = false;
                 Push = true;
@@ -123,6 +120,9 @@ public class NewPlayer2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool left = Input.GetKey(KeySetting.player2Keys[KeyAction.LEFT]);
+        bool right = Input.GetKey(KeySetting.player2Keys[KeyAction.RIGHT]);
+
         if (Time.timeScale == 0)
             return;
         if (cantMove)
@@ -139,17 +139,19 @@ public class NewPlayer2 : MonoBehaviour
             }
         }
 
-        if (!IsGamePad)
+        if (!KeySetting.IsGamePad)
         {
-            x = (int)Input.GetAxisRaw("Horizontal2");
+            if (right && !left) x = 1;
+            else if (left && !right) x = -1;
+            else x = 0;
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeySetting.player2Keys[KeyAction.LEFT]))
             {
                 transform.Translate(moveSpeed * -1f * Time.deltaTime, 0, 0);
                 if (jumpAble)
                     anim.Play("Move");
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeySetting.player2Keys[KeyAction.RIGHT]))
             {
                 transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
                 if (jumpAble)
@@ -183,15 +185,15 @@ public class NewPlayer2 : MonoBehaviour
 
     public void GrabRot()
     {
-        if (!IsGamePad)
+        if (!KeySetting.IsGamePad)
         {
-            if (Input.GetKeyDown(KeyCode.Period))
+            if (Input.GetKeyDown(KeySetting.player2Keys[KeyAction.PULL]))
             {
                 RPressTime = Time.time;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
-            if (Input.GetKey(KeyCode.Period))
+            if (Input.GetKey(KeySetting.player2Keys[KeyAction.PULL]))
             {
                 if (Time.time - RPressTime >= .5f)
                 {
@@ -205,7 +207,7 @@ public class NewPlayer2 : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.Period))
+            if (Input.GetKeyUp(KeySetting.player2Keys[KeyAction.PULL]))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
@@ -214,14 +216,14 @@ public class NewPlayer2 : MonoBehaviour
         {
             if (Input.GetButtonDown("Pull2"))
             {
-                Debug.Log("±◊∑¶ ¬˜¬° Ω√¿€");
+                Debug.Log("Í∑∏Îû© Ï∞®Ïßï ÏãúÏûë");
                 RPressTime = Time.time;
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             if (Input.GetButton("Pull2"))
             {
-                Debug.Log("±◊∑¶ ¬˜¬° ¡ﬂ");
+                Debug.Log("Í∑∏Îû© Ï∞®Ïßï Ï§ë");
 
                 if (Time.time - RPressTime >= .5f)
                 {
@@ -238,7 +240,7 @@ public class NewPlayer2 : MonoBehaviour
             if (Input.GetButtonUp("Pull2"))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
-                Debug.Log("±◊∑¶ ¬˜¬° ≥°");
+                Debug.Log("Í∑∏Îû© Ï∞®Ïßï ÎÅù");
             }
         }
      }
