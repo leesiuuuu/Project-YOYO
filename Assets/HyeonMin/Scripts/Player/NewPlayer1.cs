@@ -39,6 +39,7 @@ public class NewPlayer1 : MonoBehaviour
 
     private void Update()
     {
+ 
         if (cantMove)
             return;
         if (!grab.grabing)
@@ -115,6 +116,8 @@ public class NewPlayer1 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Time.timeScale == 0)
+            return;
         if (cantMove)
             return;
         if (!grab.grabing)

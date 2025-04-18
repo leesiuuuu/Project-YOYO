@@ -123,6 +123,8 @@ public class NewPlayer2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Time.timeScale == 0)
+            return;
         if (cantMove)
             return;
         if (!grab.grabing)
