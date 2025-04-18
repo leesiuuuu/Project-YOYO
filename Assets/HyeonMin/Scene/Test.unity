@@ -951,6 +951,26 @@ PrefabInstance:
       propertyPath: <CheckSelectPanel>k__BackingField
       value: 
       objectReference: {fileID: 2868961497376548934}
+    - target: {fileID: 6433335434363283819, guid: 6cae4dd67b9528547bb9f8481b4b7bd4, type: 3}
+      propertyPath: _player2DefaultKeys.Array.data[0]
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433335434363283819, guid: 6cae4dd67b9528547bb9f8481b4b7bd4, type: 3}
+      propertyPath: _player2DefaultKeys.Array.data[1]
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433335434363283819, guid: 6cae4dd67b9528547bb9f8481b4b7bd4, type: 3}
+      propertyPath: _player2DefaultKeys.Array.data[2]
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433335434363283819, guid: 6cae4dd67b9528547bb9f8481b4b7bd4, type: 3}
+      propertyPath: _player2DefaultKeys.Array.data[3]
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433335434363283819, guid: 6cae4dd67b9528547bb9f8481b4b7bd4, type: 3}
+      propertyPath: _player2DefaultKeys.Array.data[4]
+      value: 47
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

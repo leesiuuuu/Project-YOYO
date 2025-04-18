@@ -25,7 +25,7 @@ public class UI_KeySetting : MonoBehaviour
 
     private void SetUpButtons()
     {
-        for (int i = 0; i < _player1KeyButtons.Length; i++)
+        for (int i = 0; i < (int)KeyAction.KEYCOUNT; i++)
         {
             int index = i;
 

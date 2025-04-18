@@ -31,37 +31,29 @@ public class UI_CheckSelectKey : MonoBehaviour
             {
                 if (Input.GetKeyDown(code))
                 {
-                    // 중복 검사
                     bool isDuplicate = false;
 
-                    if (_playerType == PlayerType.Player1)
+                    foreach (var key in KeySetting.player1Keys.Values)
                     {
-                        foreach (var key in KeySetting.player1Keys.Values)
+                        if (key == code)
                         {
-                            if (key == code)
-                            {
-                                isDuplicate = true;
-
-                                _keyManager.CheckSelectPanel.SetActive(false);
-                                break;
-                            }
+                            isDuplicate = true;
+                            break;
                         }
                     }
-                    else if (_playerType == PlayerType.Player2)
+
+                    foreach (var key in KeySetting.player2Keys.Values)
                     {
-                        foreach (var key in KeySetting.player2Keys.Values)
+                        if (key == code)
                         {
-                            if (key == code)
-                            {
-                                isDuplicate = true;
-                                _keyManager.CheckSelectPanel.SetActive(false);
-                                break;
-                            }
+                            isDuplicate = true;
+                            break;
                         }
                     }
 
                     if (isDuplicate)
                     {
+                        _keyManager.CheckSelectPanel.SetActive(false);
                         return;
                     }
 

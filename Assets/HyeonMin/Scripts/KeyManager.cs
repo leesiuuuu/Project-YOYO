@@ -38,11 +38,11 @@ public class KeyManager : MonoBehaviour
     [SerializeField]
     private KeyCode[] _player2DefaultKeys = new KeyCode[]
     {
-        KeyCode.RightArrow,
         KeyCode.LeftArrow,
-        KeyCode.Slash,
+        KeyCode.RightArrow,
+        KeyCode.UpArrow,
         KeyCode.Period,
-        KeyCode.UpArrow
+        KeyCode.Slash
     };
 
     private void Awake()

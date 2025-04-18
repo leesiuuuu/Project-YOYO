@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8819db0996f1c4d9148d2d5e3af0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkSelectPanel: {fileID: 0}
+  <CheckSelectPanel>k__BackingField: {fileID: 0}
   _checkSelectKeyUI: {fileID: 0}
   _player1DefaultKeys: 6100000064000000770000006500000072000000
-  _player2DefaultKeys: 13010000140100002f0000002e00000011010000
+  _player2DefaultKeys: 1401000013010000110100002e0000002f000000
