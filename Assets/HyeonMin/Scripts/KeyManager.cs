@@ -3,10 +3,11 @@ using UnityEngine;
 
 public enum KeyAction
 {
-    RIGHT,
     LEFT,
-    PULL,
+    RIGHT,
+    Jump,
     PUSH,
+    PULL,
     KEYCOUNT
 }
 
@@ -18,33 +19,31 @@ public static class KeySetting
 
 public class KeyManager : MonoBehaviour
 {
-    // 플레이어 1 키
-    KeyCode[] _player1DefaultKeys = new KeyCode[]
+    [SerializeField] private GameObject _checkSelectPanel;
+    [SerializeField] private UI_CheckSelectKey _checkSelectKeyUI;
+
+    [SerializeField]
+    private KeyCode[] _player1DefaultKeys = new KeyCode[]
     {
         KeyCode.A,
         KeyCode.D,
+        KeyCode.W,
         KeyCode.E,
         KeyCode.R
     };
 
-    // 플레이어 2 키
-    KeyCode[] _player2DefaultKeys = new KeyCode[]
+    [SerializeField]
+    private KeyCode[] _player2DefaultKeys = new KeyCode[]
     {
-        KeyCode.RightArrow,  
+        KeyCode.RightArrow,
         KeyCode.LeftArrow,
         KeyCode.Slash,
-        KeyCode.Period
+        KeyCode.Period,
+        KeyCode.UpArrow
     };
 
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeySetting.player1Keys[KeyAction.LEFT]))
-            Debug.Log("Left");
-    }
-
-    private void Start()
-    {
-        // 플레이어 키 세팅
         for (int i = 0; i < (int)KeyAction.KEYCOUNT; i++)
         {
             KeySetting.player1Keys.Add((KeyAction)i, _player1DefaultKeys[i]);
@@ -52,21 +51,25 @@ public class KeyManager : MonoBehaviour
         }
     }
 
-    private void OnGUI()
+    private void Start()
     {
-        Event keyEvnet = Event.current;
-
-        if (keyEvnet.isKey)
-        {
-            KeySetting.player1Keys[0] = keyEvnet.keyCode;
-
-            _key = -1;
-        }
+        _checkSelectPanel?.SetActive(false);
     }
 
-    private int _key = -1;
-    public void OnChangeKey(int num)
+    public void OnChangeKey(PlayerType playerType, int index)
     {
-        _key = num;
+        _checkSelectPanel.SetActive(true);
+        _checkSelectKeyUI.SetPlayerType(playerType);
+        _checkSelectKeyUI.SetKeyIndex(index);
+    }
+
+    public void OnPlayer1ChangeKey(KeyCode newKey, int index)
+    {
+        KeySetting.player1Keys[(KeyAction)index] = newKey;
+    }
+
+    public void OnPlayer2ChangeKey(KeyCode newKey, int index)
+    {
+        KeySetting.player2Keys[(KeyAction)index] = newKey;
     }
 }
