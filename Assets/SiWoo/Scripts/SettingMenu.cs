@@ -47,6 +47,8 @@ public class SettingMenu : MonoBehaviour
         FirstSelectObj.GetComponent<Button>().Select();
 		FirstSelectObj.GetComponent<MainButton>().LoadSetting();
 
+        _system = FindAnyObjectByType<EventSystem>();
+
 	}
 	private void OnDisable()
 	{

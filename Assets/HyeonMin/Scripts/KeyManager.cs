@@ -49,8 +49,8 @@ public class KeyManager : MonoBehaviour
     {
         for (int i = 0; i < (int)KeyAction.KEYCOUNT; i++)
         {
-            KeySetting.player1Keys.Add((KeyAction)i, _player1DefaultKeys[i]);
-            KeySetting.player2Keys.Add((KeyAction)i, _player2DefaultKeys[i]);
+            KeySetting.player1Keys[(KeyAction)i] = _player1DefaultKeys[i];
+            KeySetting.player2Keys[(KeyAction)i] = _player2DefaultKeys[i];
         }
     }
 

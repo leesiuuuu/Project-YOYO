@@ -5518,7 +5518,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -58399771
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &838586412228724037
 MonoBehaviour:
@@ -5581,6 +5581,7 @@ MonoBehaviour:
   - {fileID: 478339479728443138}
   - {fileID: 4914036176553029797}
   SelectedColor: {r: 0.40566027, g: 0.8429501, b: 1, a: 1}
+  Back: {fileID: 6348435006427352161}
   ControlMode: 0
 --- !u!1 &6998460778061274721
 GameObject:
