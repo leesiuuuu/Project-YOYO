@@ -1830,6 +1830,8 @@ MonoBehaviour:
   Panel: {fileID: 1056438224651527345}
   Back: {fileID: 6348435006427352161}
   LastBtns: {fileID: 7957434396572316114}
+  isControlPanel: 0
+  curBtn: {fileID: 0}
 --- !u!1 &1792105968702553942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5592,6 +5594,7 @@ GameObject:
   - component: {fileID: 7303228291408074236}
   - component: {fileID: 2898480514706906420}
   - component: {fileID: 7829886231605868951}
+  - component: {fileID: 4693925355131902516}
   - component: {fileID: 7568620567452713702}
   m_Layer: 5
   m_Name: Control
@@ -5760,6 +5763,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4693925355131902516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287319747830253945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3933079776ade5349b7a50c7a2f7ac5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curBtn: {fileID: 7829886231605868951}
+  nextBtn: {fileID: 1238737586980550613}
+  endBtn: {fileID: 6348435006427352161}
 --- !u!114 &7568620567452713702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5775,6 +5793,8 @@ MonoBehaviour:
   Panel: {fileID: 8001347468684974593}
   Back: {fileID: 6348435006427352161}
   LastBtns: {fileID: 1120486490471065226}
+  isControlPanel: 1
+  curBtn: {fileID: 7829886231605868951}
 --- !u!1 &5440190770867336586
 GameObject:
   m_ObjectHideFlags: 0
@@ -8019,6 +8039,8 @@ MonoBehaviour:
   Panel: {fileID: 8398555219376945001}
   Back: {fileID: 6348435006427352161}
   LastBtns: {fileID: 1891107976090985672}
+  isControlPanel: 0
+  curBtn: {fileID: 0}
 --- !u!1 &7938240172429270857
 GameObject:
   m_ObjectHideFlags: 0
