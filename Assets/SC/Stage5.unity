@@ -157,7 +157,6 @@ MonoBehaviour:
   holdTile: {fileID: 1395064717}
   speed: 1
   pushPos: {x: 0, y: 2.93, z: 0}
-  clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
 --- !u!95 &60509357
 Animator:
   serializedVersion: 5
@@ -728,7 +727,6 @@ MonoBehaviour:
   holdTile: {fileID: 1074887744}
   speed: 2
   pushPos: {x: 0, y: 12, z: 0}
-  clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
 --- !u!95 &609156885
 Animator:
   serializedVersion: 5
@@ -2439,7 +2437,6 @@ MonoBehaviour:
   holdTile: {fileID: 1074887744}
   speed: 3
   pushPos: {x: 0, y: 12, z: 0}
-  clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
 --- !u!95 &807509178
 Animator:
   serializedVersion: 5
@@ -2697,7 +2694,6 @@ MonoBehaviour:
   holdTile: {fileID: 680258141}
   speed: 1
   pushPos: {x: 0, y: 2.93, z: 0}
-  clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
 --- !u!95 &899298378
 Animator:
   serializedVersion: 5
@@ -6054,7 +6050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wind: {fileID: 506395744}
-  clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
 --- !u!1 &1837764808
 GameObject:
   m_ObjectHideFlags: 0

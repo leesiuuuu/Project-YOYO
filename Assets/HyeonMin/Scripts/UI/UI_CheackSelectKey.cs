@@ -20,6 +20,8 @@ public class UI_CheckSelectKey : MonoBehaviour
     {
         _waitingForKey = true;
         _getCode = KeyCode.None;
+
+        _keyManager = FindAnyObjectByType<KeyManager>();
     }
 
 
