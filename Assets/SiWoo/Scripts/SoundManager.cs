@@ -4,11 +4,10 @@ using UnityEngine.Audio;
 
 public enum PlayerSounds
 {
-    Walk = 0,
-    Jump = 1,
-    Push = 2,
-    Pull = 3,
-    SoundsCount = 4
+    Jump = 0,
+    Push = 1,
+    Pull = 2,
+    SoundsCount = 3
 }
 
 public class SoundManager : MonoBehaviour

@@ -92,6 +92,8 @@ public class NewPlayer1Grab : MonoBehaviour
 
     public IEnumerator GoGrab()
     {
+        SoundManager.Instance.SFXPlay("PlayerPull_1", player.player1Sounds[(int)PlayerSounds.Pull]);
+
         Vector3 startPos = transform.localPosition;
         Vector3 targetPos = startPos + addtargetPos;
         float duration = Vector3.Distance(startPos, targetPos) / moveSpeed;

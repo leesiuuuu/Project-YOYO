@@ -1325,6 +1325,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1Anim
       objectReference: {fileID: 0}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: player1Sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: _player1Sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: player1Sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: player1Sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: player1Sounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: _player1Sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: _player1Sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+    - target: {fileID: 7291468092889358915, guid: 047b4187c807f654b8ecbafcf4108ebe, type: 3}
+      propertyPath: _player1Sounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

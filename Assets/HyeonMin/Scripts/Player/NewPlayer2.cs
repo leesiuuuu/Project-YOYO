@@ -31,8 +31,8 @@ public class NewPlayer2 : MonoBehaviour
     [SerializeField] private float RotSpeed = 1f;
     private float maxAngle = 20f;
 
-    [SerializeField, Header("Sound Clips")]
-    private List<AudioClip> _player2Sounds = new List<AudioClip>();
+    [Header("Sound Clips")]
+    public List<AudioClip> player2Sounds = new List<AudioClip>();
 
     private void Awake()
     {
@@ -76,12 +76,14 @@ public class NewPlayer2 : MonoBehaviour
             {
                 isCharging = false;
                 Push = true;
+                SoundManager.Instance.SFXPlay("PlayerPush_2", player2Sounds[(int)PlayerSounds.Push]);
             }
 
             if (Input.GetKeyDown(KeySetting.player2Keys[KeyAction.Jump]) && jumpAble)
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
+                SoundManager.Instance.SFXPlay("PlayerJump_2", player2Sounds[(int)PlayerSounds.Jump]);
                 anim.Play("Jump");
             }
         }
