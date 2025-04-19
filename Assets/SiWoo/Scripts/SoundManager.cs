@@ -1,7 +1,15 @@
 using System.Collections;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Audio;
+
+public enum PlayerSounds
+{
+    Walk = 0,
+    Jump = 1,
+    Push = 2,
+    Pull = 3,
+    SoundsCount = 4
+}
 
 public class SoundManager : MonoBehaviour
 {
