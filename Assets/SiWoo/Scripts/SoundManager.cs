@@ -7,7 +7,8 @@ public enum PlayerSounds
     Jump = 0,
     Push = 1,
     Pull = 2,
-    SoundsCount = 3
+	Die = 3,
+    SoundsCount = 4
 }
 
 public class SoundManager : MonoBehaviour
