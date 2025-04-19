@@ -2334,7 +2334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trampoline: {fileID: 0}
-  JumpPower: 50
+  JumpPower: 40
+  clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
 --- !u!1 &8966986650715265224
 GameObject:
   m_ObjectHideFlags: 0

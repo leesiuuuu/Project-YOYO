@@ -7,7 +7,8 @@ public class Trampoline : MonoBehaviour
 {
     public GameObject trampoline;
     public float JumpPower = 2;
-
+    [SerializeField]
+    AudioClip clip;
     private void Awake()
     {
             trampoline = transform.parent.parent.gameObject;
@@ -17,6 +18,7 @@ public class Trampoline : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
         {
+            SoundManager.Instance.SFXPlay("Trampoline",clip);
             rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
             StartCoroutine(ScaleSet());
         }

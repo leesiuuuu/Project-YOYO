@@ -14,6 +14,8 @@ public class TurnColorObject : MonoBehaviour
     public List<GameObject> blackTileList;
 
     public Animator anim;
+
+    [SerializeField] AudioClip clip;
    
     ColorType colorType = ColorType.White;
 
@@ -35,6 +37,8 @@ public class TurnColorObject : MonoBehaviour
 
     void TurnColor()
     {
+        SoundManager.Instance.SFXPlay("TurnColor",clip);
+
         colorType = colorType == ColorType.White ? ColorType.Black : ColorType.White;
 
         if (colorType == ColorType.White)
