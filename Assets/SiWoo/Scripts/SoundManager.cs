@@ -65,16 +65,16 @@ public class SoundManager : MonoBehaviour
 		source.clip = clip;
 		source.Play();
 
-		Destroy(go, clip.length);
+		StartCoroutine(DestroyAfterRealtime(go, clip.length));
 	}
-/*	public void BgSoundPlay(AudioClip clip)
-	{
-		bgSound.clip = clip;
-		bgSound.outputAudioMixerGroup = audioMixer.FindMatchingGroups("Music")[0];
-		bgSound.loop = true;
-		bgSound.volume = 0.1f;
-		bgSound.Play();
-	}*/
+	/*	public void BgSoundPlay(AudioClip clip)
+		{
+			bgSound.clip = clip;
+			bgSound.outputAudioMixerGroup = audioMixer.FindMatchingGroups("Music")[0];
+			bgSound.loop = true;
+			bgSound.volume = 0.1f;
+			bgSound.Play();
+		}*/
 	public void BgFadeIn(AudioSource BgPlayer)
 	{
 		StartCoroutine(FadeIn(BgPlayer));
@@ -154,5 +154,11 @@ public class SoundManager : MonoBehaviour
 		audioMixer.SetFloat("SFXVolume", n);
 		PlayerPrefs.SetFloat("SFXVolume", val);
 		PlayerPrefs.Save();
+	}
+
+	private IEnumerator DestroyAfterRealtime(GameObject go, float delay)
+	{
+		yield return new WaitForSecondsRealtime(delay); // TimeScale 0이어도 기다림
+		Destroy(go);
 	}
 }
