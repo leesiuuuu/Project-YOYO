@@ -56,9 +56,11 @@ public class NewChargeUI : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
         Player1UI();
         Player2UI();
-
 
         Vector3 player1Pos = Camera.main.WorldToScreenPoint(player1.transform.position);
         Vector3 player2Pos = Camera.main.WorldToScreenPoint(player2.transform.position);
