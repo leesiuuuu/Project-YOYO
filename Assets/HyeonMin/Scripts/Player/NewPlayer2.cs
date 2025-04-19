@@ -252,6 +252,7 @@ public class NewPlayer2 : MonoBehaviour
 
     public void Die()
     {
+        SoundManager.Instance.SFXPlay("PlayerDied_2", player2Sounds[(int)PlayerSounds.Die]);
         anim.Play("Die");
         cantMove = true;
     }
