@@ -186,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -276,7 +276,7 @@ MonoBehaviour:
   addPos: {x: 0, y: 0, z: 0}
   object1: {fileID: 0}
   object2: {fileID: 0}
-  margin: 2
+  margin: 4
 --- !u!1001 &269852821
 PrefabInstance:
   m_ObjectHideFlags: 0
