@@ -310,6 +310,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 1106955181}
   bs: {fileID: 1580692568}
+  btns:
+  - {fileID: 1654347373}
+  - {fileID: 1716768222}
+  - {fileID: 1603722900}
 --- !u!1 &153371769
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,7 +6139,7 @@ PrefabInstance:
     - target: {fileID: 3061560036753186405, guid: cf46c035fe44bfc46a168783dabaa785, type: 3}
       propertyPath: m_FirstSelected
       value: 
-      objectReference: {fileID: 1654347369}
+      objectReference: {fileID: 0}
     - target: {fileID: 6156707472409303360, guid: cf46c035fe44bfc46a168783dabaa785, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6284,8 +6288,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uC804\uC5D0 \uD074\uB9AC\uC5B4\uD55C \uC2A4\uD14C\uC774\uC9C0\uB97C
-    \uC120\uD0DD\uD574 \uD50C\uB808\uC774\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  m_Text: "\uBAA8\uB4E0 \uC2A4\uD14C\uC774\uC9C0 \uC911 \uD558\uB098\uB97C \uC120\uD0DD\uD574
+    \uD50C\uB808\uC774\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 --- !u!222 &1462589430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6468,6 +6472,7 @@ GameObject:
   - component: {fileID: 1603722901}
   - component: {fileID: 1603722900}
   - component: {fileID: 1603722903}
+  - component: {fileID: 1603722904}
   m_Layer: 5
   m_Name: StageSelectPanel (2)
   m_TagString: Untagged
@@ -6620,6 +6625,20 @@ MonoBehaviour:
   tMap: {fileID: 823947549}
   CG: {fileID: 1155004544}
   isSelected: 0
+--- !u!114 &1603722904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603722898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a190f8756447c42825d98813190d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 8300000, guid: 27d37a93844ab654e9c8133c0e21743d, type: 3}
+  Submitac: {fileID: 8300000, guid: ac2f87181c37a414a92c3d1ac49c4b1b, type: 3}
 --- !u!1 &1605190015
 GameObject:
   m_ObjectHideFlags: 0
@@ -6761,6 +6780,7 @@ GameObject:
   - component: {fileID: 1654347371}
   - component: {fileID: 1654347373}
   - component: {fileID: 1654347374}
+  - component: {fileID: 1654347375}
   m_Layer: 5
   m_Name: StageSelectPanel
   m_TagString: Untagged
@@ -6913,6 +6933,20 @@ MonoBehaviour:
   tMap: {fileID: 988161520}
   CG: {fileID: 1022287010}
   isSelected: 0
+--- !u!114 &1654347375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654347369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a190f8756447c42825d98813190d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 8300000, guid: 27d37a93844ab654e9c8133c0e21743d, type: 3}
+  Submitac: {fileID: 8300000, guid: ac2f87181c37a414a92c3d1ac49c4b1b, type: 3}
 --- !u!1 &1702226541
 GameObject:
   m_ObjectHideFlags: 0
@@ -7387,6 +7421,7 @@ GameObject:
   - component: {fileID: 1716768223}
   - component: {fileID: 1716768222}
   - component: {fileID: 1716768225}
+  - component: {fileID: 1716768226}
   m_Layer: 5
   m_Name: StageSelectPanel (1)
   m_TagString: Untagged
@@ -7539,6 +7574,77 @@ MonoBehaviour:
   tMap: {fileID: 727788254}
   CG: {fileID: 896778296}
   isSelected: 0
+--- !u!114 &1716768226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716768220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a190f8756447c42825d98813190d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 8300000, guid: 27d37a93844ab654e9c8133c0e21743d, type: 3}
+  Submitac: {fileID: 8300000, guid: ac2f87181c37a414a92c3d1ac49c4b1b, type: 3}
+--- !u!1001 &1725627066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763544046744610216, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682625016032154520, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c3b82c420b62cb45a4730a5d0605df5, type: 3}
 --- !u!1 &1726405319
 GameObject:
   m_ObjectHideFlags: 0
@@ -9255,3 +9361,4 @@ SceneRoots:
   - {fileID: 1332080342}
   - {fileID: 23636950}
   - {fileID: 1580692569}
+  - {fileID: 1725627066}
