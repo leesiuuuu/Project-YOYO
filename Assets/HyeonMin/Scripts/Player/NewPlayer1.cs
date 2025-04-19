@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NewPlayer1 : MonoBehaviour
@@ -24,6 +25,9 @@ public class NewPlayer1 : MonoBehaviour
     private float RPressTime = 0f;
     [SerializeField] private float RotSpeed = 1f;
     public float maxAngle = 20f;
+
+    [Header("Sound Clips")]
+    public List<AudioClip> player1Sounds = new List<AudioClip>();
 
     private void Awake()
     {
@@ -64,12 +68,14 @@ public class NewPlayer1 : MonoBehaviour
             {
                 isCharging = false;
                 Push = true;
+                SoundManager.Instance.SFXPlay("PlayerPush_1", player1Sounds[(int)PlayerSounds.Push]);
             }
 
             if (Input.GetKeyDown(KeySetting.player1Keys[KeyAction.Jump]) && jumpAble)
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
+                SoundManager.Instance.SFXPlay("PlayerJump_1", player1Sounds[(int)PlayerSounds.Jump]);
                 anim.Play("Jump");
             }
         }
@@ -79,6 +85,7 @@ public class NewPlayer1 : MonoBehaviour
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
+                SoundManager.Instance.SFXPlay("PlayerJump_1", player1Sounds[(int)PlayerSounds.Jump]);
                 anim.Play("Jump");
             }
 
@@ -100,6 +107,7 @@ public class NewPlayer1 : MonoBehaviour
             {
                 isCharging = false;
                 Push = true;
+                SoundManager.Instance.SFXPlay("PlayerPush_1", player1Sounds[(int)PlayerSounds.Push]);
             }
         }
     }
@@ -192,7 +200,7 @@ public class NewPlayer1 : MonoBehaviour
                     Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
             }
-/*
+            /*
             if (Input.GetKeyUp(KeySetting.player1Keys[KeyAction.PULL]))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -220,6 +228,11 @@ public class NewPlayer1 : MonoBehaviour
                 {
                     Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
+            }
+
+            if (Input.GetButtonUp("Pull1"))
+            {
+                SoundManager.Instance.SFXPlay("PlayerPull_1", player1Sounds[(int)PlayerSounds.Pull]);
             }
 /*
             if (Input.GetButtonUp("Pull1"))
