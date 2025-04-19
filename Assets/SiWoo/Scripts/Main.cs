@@ -8,7 +8,7 @@ public class Main : MonoBehaviour
 {
 	private bool isSelected = false;
 	public Button[] btns;
- 	private void Update()
+	private void Update()
 	{
 		if (Input.anyKey && !isSelected)
 		{
