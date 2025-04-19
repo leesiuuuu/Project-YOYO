@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
 		}
 		else
 		{
-			BGSoundVolume(0);
+			BGSoundVolume(1);
 		}
 
 		if (PlayerPrefs.HasKey("SFXVolume"))
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
 		}
 		else
 		{
-			SFXSoundVolume(0);
+			SFXSoundVolume(1);
 		}
 	}
 	public void SFXPlay(string sfxName, AudioClip clip)
