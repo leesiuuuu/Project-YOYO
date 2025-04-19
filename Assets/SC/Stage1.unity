@@ -1216,6 +1216,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2881154559138690655, guid: 203ca478c2f9d3640895252169ff28a7, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
     - target: {fileID: 5273350767282810756, guid: 203ca478c2f9d3640895252169ff28a7, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1379,6 +1383,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb26b8b73e63be3408c70cc290d8099c, type: 3}
+--- !u!1 &1246315600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1246315602}
+  - component: {fileID: 1246315601}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1246315601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246315600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cdf70c58de0a2429648c0ec42d651d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 49a6f386b4230af49a9eb5fc64e81290, type: 2}
+--- !u!4 &1246315602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246315600}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1304730580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3969,6 +4018,7 @@ SceneRoots:
   - {fileID: 1417037277}
   - {fileID: 1389344185}
   - {fileID: 1884606450}
+  - {fileID: 1246315602}
   - {fileID: 1830828609}
   - {fileID: 1434835858}
   - {fileID: 269852821}

@@ -17,7 +17,10 @@ public class Door : MonoBehaviour
 
     NewPlayer1 player1;
     NewPlayer2 player2;
-
+    [SerializeField]
+    AudioClip clip1;
+    [SerializeField]
+    AudioClip clip2;
     private void Start()
     {
         keyCounter = FindObjectOfType<KeyCounter>();
@@ -65,7 +68,9 @@ public class Door : MonoBehaviour
             isCleared = true;
             player1.Cleared();
             player2.Cleared();
+            SoundManager.Instance.SFXPlay("Clear", clip1);
             yield return new WaitForSeconds(1.5f);
+            SoundManager.Instance.SFXPlay("Clear", clip2);
             clearUI.SetActive(true);
         }
     }

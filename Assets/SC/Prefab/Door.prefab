@@ -786,6 +786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCleared: 0
   clearUI: {fileID: 2219595443857970223}
+  clip1: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
+  clip2: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
 --- !u!1001 &4787512830522576773
 PrefabInstance:
   m_ObjectHideFlags: 0
