@@ -805,6 +805,7 @@ GameObject:
   - component: {fileID: 202162098}
   - component: {fileID: 202162097}
   - component: {fileID: 202162096}
+  - component: {fileID: 202162099}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -926,6 +927,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202162094}
   m_CullTransparentMesh: 1
+--- !u!114 &202162099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202162094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a190f8756447c42825d98813190d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 8300000, guid: 27d37a93844ab654e9c8133c0e21743d, type: 3}
+  Submitac: {fileID: 8300000, guid: ac2f87181c37a414a92c3d1ac49c4b1b, type: 3}
 --- !u!1 &294816650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2879,7 @@ GameObject:
   - component: {fileID: 819165818}
   - component: {fileID: 819165817}
   - component: {fileID: 819165816}
+  - component: {fileID: 819165819}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -2997,6 +3013,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819165814}
   m_CullTransparentMesh: 1
+--- !u!114 &819165819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819165814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a190f8756447c42825d98813190d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 8300000, guid: 27d37a93844ab654e9c8133c0e21743d, type: 3}
+  Submitac: {fileID: 8300000, guid: ac2f87181c37a414a92c3d1ac49c4b1b, type: 3}
 --- !u!1 &896992876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,6 +3523,7 @@ GameObject:
   - component: {fileID: 1168701941}
   - component: {fileID: 1168701940}
   - component: {fileID: 1168701939}
+  - component: {fileID: 1168701942}
   m_Layer: 5
   m_Name: Yes
   m_TagString: Untagged
@@ -3614,6 +3645,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168701937}
   m_CullTransparentMesh: 1
+--- !u!114 &1168701942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168701937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a190f8756447c42825d98813190d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 8300000, guid: 27d37a93844ab654e9c8133c0e21743d, type: 3}
+  Submitac: {fileID: 8300000, guid: ac2f87181c37a414a92c3d1ac49c4b1b, type: 3}
 --- !u!1 &1218999185
 GameObject:
   m_ObjectHideFlags: 0
@@ -4690,6 +4735,7 @@ GameObject:
   - component: {fileID: 1377792782}
   - component: {fileID: 1377792781}
   - component: {fileID: 1377792780}
+  - component: {fileID: 1377792783}
   m_Layer: 5
   m_Name: No
   m_TagString: Untagged
@@ -4823,6 +4869,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377792778}
   m_CullTransparentMesh: 1
+--- !u!114 &1377792783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377792778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a190f8756447c42825d98813190d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ac: {fileID: 8300000, guid: 27d37a93844ab654e9c8133c0e21743d, type: 3}
+  Submitac: {fileID: 8300000, guid: ac2f87181c37a414a92c3d1ac49c4b1b, type: 3}
 --- !u!1 &1504906661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5989,7 +6049,7 @@ PrefabInstance:
     - target: {fileID: 3061560036753186405, guid: cf46c035fe44bfc46a168783dabaa785, type: 3}
       propertyPath: m_FirstSelected
       value: 
-      objectReference: {fileID: 819165814}
+      objectReference: {fileID: 0}
     - target: {fileID: 6156707472409303360, guid: cf46c035fe44bfc46a168783dabaa785, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
