@@ -59,6 +59,8 @@ public class PauseMenu : MonoBehaviour
 	{
 		if(Time.timeScale == 0) Time.timeScale = 1;
 
+		BGMScript bs = FindObjectOfType<PauseController>().bs;
+		bs.FadeInCustom(0.2f);
 		Destroy(settingCanvas);
 		isSettingMenu = false;
 		Destroy(gameObject);

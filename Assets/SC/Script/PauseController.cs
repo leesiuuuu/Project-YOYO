@@ -8,8 +8,8 @@ public class PauseController : MonoBehaviour
     GameObject pauseUI;
 
     GameObject go;
-    [SerializeField]
-    private BGMScript bs;
+
+    public BGMScript bs;
 
     private void Start()
     {
