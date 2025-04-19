@@ -26,6 +26,7 @@ public class SettingMenu : MonoBehaviour
     //0 = 키보드 선택 모드
     //1 = 콘솔 선택 모드
     private int ControlMode;
+
 	private void Start()
 	{
 		if(GetComponent<Canvas>().worldCamera == null)
@@ -37,7 +38,32 @@ public class SettingMenu : MonoBehaviour
 	{
         GetComponent<Canvas>().worldCamera = FindObjectOfType<Camera>();
 
-        soundSlider[0].value = PlayerPrefs.HasKey("SFXVolume") ? PlayerPrefs.GetFloat("SFXVolume") : 1;
+
+		for (int i = 0; i < 2; i++)
+		{
+			Slider slider = soundSlider[i];
+			slider.onValueChanged.RemoveAllListeners();
+            if(i == 0)
+            {
+				slider.onValueChanged.AddListener((float value) =>
+				{
+					SoundManager s = FindObjectOfType<SoundManager>();
+					s.SFXSoundVolume(value);
+				});
+			}
+            else
+			{
+				slider.onValueChanged.AddListener((float value) =>
+				{
+					SoundManager s = FindObjectOfType<SoundManager>();
+					s.BGSoundVolume(value);
+				});
+
+			}
+
+		}
+
+		soundSlider[0].value = PlayerPrefs.HasKey("SFXVolume") ? PlayerPrefs.GetFloat("SFXVolume") : 1;
         soundSlider[1].value = PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 1;
 
         ControlMode = PlayerPrefs.HasKey("ControlMode") ? PlayerPrefs.GetInt("ControlMode") : 0;
