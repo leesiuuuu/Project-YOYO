@@ -48,6 +48,9 @@ public class NewPlayer2 : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
         if (cantMove)
             return;
         if (!grab.grabing)
@@ -125,6 +128,9 @@ public class NewPlayer2 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Time.timeScale == 0)
+            return;
+
         bool left = Input.GetKey(KeySetting.player2Keys[KeyAction.LEFT]);
         bool right = Input.GetKey(KeySetting.player2Keys[KeyAction.RIGHT]);
 

@@ -33,6 +33,9 @@ public class NewPlayer2Grab : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= 1)
         {
             holdGrab = false;
