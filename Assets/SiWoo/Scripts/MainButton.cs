@@ -7,6 +7,10 @@ public class MainButton : MonoBehaviour, ISelectHandler
 	public GameObject Panel;
 	public Button Back;
 	public Selectable LastBtns;
+	[SerializeField]
+	private bool isControlPanel;
+	[SerializeField]
+	private Button curBtn;
 	public void LoadSetting()
 	{
 		CanvasGroup[] others = FindObjectsOfType<CanvasGroup>();
@@ -36,9 +40,18 @@ public class MainButton : MonoBehaviour, ISelectHandler
 			{
 				others[o].alpha = 1;
 				others[o].interactable = true;
-				Navigation n = Back.navigation;
-				n.selectOnUp = LastBtns;
-				Back.navigation = n;
+				if(isControlPanel && PlayerPrefs.GetInt("ControlMode") == 1)
+				{
+					Navigation n = Back.navigation;
+					n.selectOnUp = curBtn;
+					Back.navigation = n;
+				}
+				else
+				{
+					Navigation n = Back.navigation;
+					n.selectOnUp = LastBtns;
+					Back.navigation = n;
+				}
 				continue;
 			}
 

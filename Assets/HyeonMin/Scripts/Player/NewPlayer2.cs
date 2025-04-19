@@ -207,10 +207,10 @@ public class NewPlayer2 : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeySetting.player2Keys[KeyAction.PULL]))
+/*            if (Input.GetKeyUp(KeySetting.player2Keys[KeyAction.PULL]))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
+            }*/
         }
         else
         {
@@ -237,11 +237,11 @@ public class NewPlayer2 : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonUp("Pull2"))
+/*            if (Input.GetButtonUp("Pull2"))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Debug.Log("그랩 차징 끝");
-            }
+            }*/
         }
      }
 
