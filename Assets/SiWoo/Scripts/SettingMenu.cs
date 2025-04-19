@@ -92,7 +92,10 @@ public class SettingMenu : MonoBehaviour
         ControlMode = 1;
         PlayerPrefs.SetInt("ControlMode", ControlMode);
         PlayerPrefs.Save();
-    }
+
+        StandaloneInputModule sim = FindObjectOfType<StandaloneInputModule>();
+		sim.horizontalAxis = "JoyStick1";
+	}
     public void SetKeyboard()
     {
         ChangeButtonColor(0, true);
@@ -104,6 +107,9 @@ public class SettingMenu : MonoBehaviour
         ControlMode = 0;
 		PlayerPrefs.SetInt("ControlMode", ControlMode);
 		PlayerPrefs.Save();
+
+		StandaloneInputModule sim = FindObjectOfType<StandaloneInputModule>();
+		sim.horizontalAxis = "Horizontal1";
 	}
 
     private void ChangeButtonColor(int btn, bool isSelect)
