@@ -65,6 +65,7 @@ public class SettingMenu : MonoBehaviour
 
         ControlMode = 1;
         PlayerPrefs.SetInt("ControlMode", ControlMode);
+        PlayerPrefs.Save();
     }
     public void SetKeyboard()
     {
@@ -76,6 +77,7 @@ public class SettingMenu : MonoBehaviour
 
         ControlMode = 0;
 		PlayerPrefs.SetInt("ControlMode", ControlMode);
+		PlayerPrefs.Save();
 	}
 
     private void ChangeButtonColor(int btn, bool isSelect)

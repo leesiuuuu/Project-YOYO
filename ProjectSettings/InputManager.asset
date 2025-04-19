@@ -404,7 +404,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 4
+    joyNum: 2
   - serializedVersion: 3
     m_Name: JoyStick1
     descriptiveName: 
@@ -420,7 +420,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Enable Debug Button 1
     descriptiveName: 
