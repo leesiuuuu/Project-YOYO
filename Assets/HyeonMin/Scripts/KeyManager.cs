@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum KeyAction
 {
@@ -67,6 +68,31 @@ public class KeyManager : MonoBehaviour
                 KeySetting.player2Keys[(KeyAction)i] = _player2DefaultKeys[i];
             }
         }
+
+        if (_checkSelectKeyUI == null)
+            _checkSelectKeyUI = FindAnyObjectByType<UI_CheckSelectKey>();
+        if (CheckSelectPanel == null)
+            CheckSelectPanel = GameObject.Find("NewKeySeleteCanvas");
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (_checkSelectKeyUI == null)
+            _checkSelectKeyUI = FindAnyObjectByType<UI_CheckSelectKey>();
+        if (CheckSelectPanel == null)
+            CheckSelectPanel = GameObject.Find("NewKeySeleteCanvas");
+
+        CheckSelectPanel?.SetActive(false);
     }
 
     private void Start()

@@ -42,11 +42,5 @@ public class MoveTile : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.transform.GetComponent<Rigidbody2D>() != null)
-        {
-            collision.transform.parent = null;
-        }
-    }
+    
 }
