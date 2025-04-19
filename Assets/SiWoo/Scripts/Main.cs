@@ -12,7 +12,8 @@ public class Main : MonoBehaviour
 	{
 		if (Input.anyKey && !isSelected)
 		{
-
+			btns[0].Select();
+			isSelected = true;
 		}
 	}
 }
