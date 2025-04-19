@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NewPlayer1 : MonoBehaviour
@@ -24,6 +25,9 @@ public class NewPlayer1 : MonoBehaviour
     private float RPressTime = 0f;
     [SerializeField] private float RotSpeed = 1f;
     public float maxAngle = 20f;
+
+    [SerializeField, Header("Sound Clips")]
+    private List<AudioClip> _player1Sounds = new List<AudioClip>();
 
     private void Awake()
     {

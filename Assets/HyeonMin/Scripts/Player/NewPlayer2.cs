@@ -31,6 +31,9 @@ public class NewPlayer2 : MonoBehaviour
     [SerializeField] private float RotSpeed = 1f;
     private float maxAngle = 20f;
 
+    [SerializeField, Header("Sound Clips")]
+    private List<AudioClip> _player2Sounds = new List<AudioClip>();
+
     private void Awake()
     {
         glove = GetComponentInChildren<NewPushGlove>();
