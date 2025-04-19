@@ -8,6 +8,8 @@ public class PauseController : MonoBehaviour
     GameObject pauseUI;
 
     GameObject go;
+    [SerializeField]
+    private BGMScript bs;
 
     private void Start()
     {
@@ -24,12 +26,14 @@ public class PauseController : MonoBehaviour
                 if(Time.timeScale == 1)
                 {
                     go = Instantiate(pauseUI);
+                    bs.FadeOutCustom(0.2f, 0.2f);
                     Time.timeScale = 0;
                 }
                 else if(Time.timeScale == 0)
                 {
                     go.GetComponent<PauseMenu>().Resume();
-                    Time.timeScale = 1;
+					bs.FadeInCustom(0.2f);
+					Time.timeScale = 1;
                 }
             }
         }
