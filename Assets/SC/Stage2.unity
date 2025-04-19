@@ -847,6 +847,7 @@ MonoBehaviour:
   - {fileID: 1702850997}
   - {fileID: 119366487}
   anim: {fileID: 0}
+  clip: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
 --- !u!1 &278439863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,6 +3549,7 @@ MonoBehaviour:
   - {fileID: 1702850997}
   - {fileID: 119366487}
   anim: {fileID: 0}
+  clip: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
 --- !u!212 &1690746117
 SpriteRenderer:
   m_ObjectHideFlags: 0
