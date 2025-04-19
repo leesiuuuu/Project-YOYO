@@ -192,11 +192,11 @@ public class NewPlayer1 : MonoBehaviour
                     Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
             }
-
+/*
             if (Input.GetKeyUp(KeySetting.player1Keys[KeyAction.PULL]))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
+            }*/
         }
         else
         {
@@ -221,11 +221,11 @@ public class NewPlayer1 : MonoBehaviour
                     Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
             }
-
+/*
             if (Input.GetButtonUp("Pull1"))
             {
                 Grab.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
+            }*/
         }
     }
 
