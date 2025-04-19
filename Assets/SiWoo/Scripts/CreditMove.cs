@@ -5,6 +5,7 @@ public class CreditMove : MonoBehaviour
 {
 	bool isMove = true;
 	public LevelLoader LevelLoader;
+	public BGMScript bs;
 	private void Start()
 	{
 		StartCoroutine(MoveCredit());
@@ -13,6 +14,7 @@ public class CreditMove : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
 		{
+			bs.FadeOut();
 			LevelLoader.LoadScene("SelectScene");
 		}
 	}
@@ -35,6 +37,7 @@ public class CreditMove : MonoBehaviour
 
 		rt.anchoredPosition = end;
 		yield return new WaitForSeconds(3f);
+		bs.FadeOut();
 		LevelLoader.LoadScene("SelectScene");
 	}
 }
