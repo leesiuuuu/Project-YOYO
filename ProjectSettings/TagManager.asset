@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Player1
+  - Player2
+  - Player1Glove
+  - Player2Glove
+  - Player1Grab
+  - Player2Grab
+  - Grabable
+  - interactive
+  - Panel
   layers:
   - Default
   - TransparentFX
@@ -11,9 +21,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Box
+  - CanTurn
   - 
   - 
   - 
@@ -40,4 +50,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Object
+    uniqueID: 1895791611
+    locked: 0
+  - name: Platform
+    uniqueID: 383531587
+    locked: 0
+  - name: Player
+    uniqueID: 948870839
+    locked: 0
+  - name: UI
+    uniqueID: 4236567525
     locked: 0
