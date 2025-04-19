@@ -354,7 +354,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -4966}
-  m_SizeDelta: {x: 600.87, y: 411.29}
+  m_SizeDelta: {x: 1746, y: 411.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286171163
 MonoBehaviour:
@@ -380,7 +380,14 @@ MonoBehaviour:
 
     <size=64>
 
-    null'
+    Kenney.nl
+
+    8Bit Music - 062022
+
+    8Bit Music
+    Album - 051321
+
+    Casual Game Sounds U6'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b92406d228039547aa8fe0e098aaeb6, type: 2}
   m_sharedMaterial: {fileID: 6200283919188301201, guid: 2b92406d228039547aa8fe0e098aaeb6, type: 2}
