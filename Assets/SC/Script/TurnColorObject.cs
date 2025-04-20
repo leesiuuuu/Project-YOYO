@@ -17,10 +17,11 @@ public class TurnColorObject : MonoBehaviour
 
     [SerializeField] AudioClip clip;
    
-    ColorType colorType = ColorType.White;
+    static ColorType colorType = ColorType.White;
 
     private void Start()
     {
+        colorType = ColorType.White;
         for (int i = 0; i < blackTileList.Count; i++)
         {
             blackTileList[i].SetActive(false);
