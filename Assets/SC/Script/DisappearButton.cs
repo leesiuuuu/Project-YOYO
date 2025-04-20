@@ -21,13 +21,4 @@ public class DisappearButton : MonoBehaviour
             anim.Play("Push");
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Rigidbody2D>() != null)
-        {
-            disappearObj.SetActive(true);
-            anim.Play("Pull");
-        }
-    }
 }
