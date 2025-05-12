@@ -8,11 +8,14 @@ public class Monster : MonoBehaviour
     [SerializeField] Vector3 pos1;
     [SerializeField] Vector3 pos2;
 
+    Rigidbody2D rigid;
+
     [SerializeField] float speed;
     Vector3 desPos;
     private void Start()
     {
         desPos = pos1;
+        rigid = GetComponent<Rigidbody2D>();
         StartCoroutine(Move());
     }
 
@@ -27,7 +30,7 @@ public class Monster : MonoBehaviour
             }
             else
             {
-                transform.position += (desPos - transform.position).normalized * speed * Time.deltaTime;
+                rigid.velocity = (desPos - transform.position).normalized * speed;
             }
         }
     }
