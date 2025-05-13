@@ -525,29 +525,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3200481923067352306, guid: 5c74095b11f576b47bc26d77192a48d5, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1486692791}
-    - target: {fileID: 6001995497115556064, guid: 5c74095b11f576b47bc26d77192a48d5, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 6514209533996763468, guid: 5c74095b11f576b47bc26d77192a48d5, type: 3}
       propertyPath: m_Name
       value: StageInfo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8483264930199132442, guid: 5c74095b11f576b47bc26d77192a48d5, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 956.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 8483264930199132442, guid: 5c74095b11f576b47bc26d77192a48d5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8651957090235456821, guid: 5c74095b11f576b47bc26d77192a48d5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
