@@ -8,6 +8,9 @@ public class LevelLoader : MonoBehaviour
 	[SerializeField]
 	private Animator animator;
 
+	[SerializeField]
+	private float LoadingTime = 1f;
+
 	public void LoadNextLevel(int SceneIndex)
 	{
 		FindObjectOfType<EventSystem>().gameObject.SetActive(false);
@@ -23,7 +26,7 @@ public class LevelLoader : MonoBehaviour
 	{
 		animator.SetTrigger("Start");
 
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(LoadingTime);
 
 		SceneManager.LoadScene(levelIndex);
 	}
@@ -32,7 +35,7 @@ public class LevelLoader : MonoBehaviour
 	{
 		animator.SetTrigger("Start");
 
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(LoadingTime);
 
 		SceneManager.LoadScene(name);
 	}
