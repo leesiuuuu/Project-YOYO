@@ -38,7 +38,7 @@ public class StageTitle : MonoBehaviour
 
 		float ElapsedTime = 0f;
 		float Duration = 1f;
-		float WaitTime = 3f;
+		float WaitTime = 2f;
 		while(ElapsedTime < Duration)
 		{
 			ElapsedTime += Time.deltaTime;
@@ -72,7 +72,7 @@ public class StageTitle : MonoBehaviour
 
 		float ElapsedTime = 0f;
 		float Duration = 0.8f;
-		float WaitTime = 2.8f;
+		float WaitTime = 1.8f;
 
 		while (ElapsedTime < Duration)
 		{
