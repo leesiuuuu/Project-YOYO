@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ChargeUI : MonoBehaviour
 {
+    Canvas canvas;
+
     Player1 player1;
     Player2 player2;
 
@@ -29,6 +31,8 @@ public class ChargeUI : MonoBehaviour
     Vector3 offset = new Vector3(0, 120, 0);
     private void Awake()
     {
+        canvas = GameObject.Find("UI").GetComponent<Canvas>();
+
         player1 = GameObject.Find("Player1").GetComponent<Player1>();
         player2 = GameObject.Find("Player2").GetComponent<Player2>();
 
@@ -62,21 +66,27 @@ public class ChargeUI : MonoBehaviour
         Player1UI();
         Player2UI();
 
+        Vector3 screenPos1 = Camera.main.WorldToScreenPoint(player1.transform.position);
+        Vector3 screenPos2 = Camera.main.WorldToScreenPoint(player2.transform.position);
 
-        Vector3 player1Pos = Camera.main.WorldToScreenPoint(player1.transform.position);
-        Vector3 player2Pos = Camera.main.WorldToScreenPoint(player2.transform.position);
+        Vector2 uiPos1, uiPos2;
+        
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
 
-        P1Gage.rectTransform.position = player1Pos + offset;
-        P1ChargeGage.fillAmount = player1.pushCharge / 35;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos1 + offset, Camera.main, out uiPos1);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos2 + offset, Camera.main, out uiPos2);
 
-        P2Gage.rectTransform.position = player2Pos + offset;
-        P2ChargeGage.fillAmount = player2.pushCharge / 35;
+        P1Gage.rectTransform.localPosition = uiPos1;
+        P2Gage.rectTransform.localPosition = uiPos2;
+
+        P1ChargeGage.fillAmount = player1.pushCharge / 35f;
+        P2ChargeGage.fillAmount = player2.pushCharge / 35f;
     }
 
     void Player1UI()
     {
         //ÁÖ¸Ô UI
-        if(PushGlove1.active)
+        if(PushGlove1.activeSelf)
         {
             if (Input.GetKey(KeyCode.E))
             {
@@ -90,7 +100,7 @@ public class ChargeUI : MonoBehaviour
         }
 
         //±×·¦ UI
-        if(Player1Grab.active)
+        if(Player1Grab.activeSelf)
         {
             if (Input.GetKey(KeyCode.R))
             {
@@ -107,7 +117,7 @@ public class ChargeUI : MonoBehaviour
     void Player2UI()
     {
         //ÁÖ¸Ô UI
-        if(PushGlove2.active)
+        if(PushGlove2.activeSelf)
         {
             if (Input.GetKey(KeyCode.Slash))
             {
@@ -121,7 +131,7 @@ public class ChargeUI : MonoBehaviour
 
 
         //±×·¦ UI
-        if(Player2Grab.active)
+        if(Player2Grab.activeSelf)
         {
             if (Input.GetKey(KeyCode.Period))
             {
