@@ -1,4 +1,4 @@
-# Pull&Push
+# Push&Pull
 
 
 ### 조원

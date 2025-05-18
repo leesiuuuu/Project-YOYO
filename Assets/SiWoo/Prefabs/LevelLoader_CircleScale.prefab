@@ -60,8 +60,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: -58399771
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &8168277277429102608
 MonoBehaviour:
@@ -115,7 +115,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3809c0f9aa7fe644287e69a262a626f4, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2353087837896112663}
+  LoadingTime: 1
 --- !u!1 &9119685912838158316
 GameObject:
   m_ObjectHideFlags: 0

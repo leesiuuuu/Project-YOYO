@@ -22,7 +22,7 @@ public class MoveTile : MonoBehaviour
         while (true)
         {
             yield return null;
-            if ((desPos - transform.position).magnitude < 0.03f)
+            if ((desPos - transform.position).magnitude < 0.05f)
             {
                 desPos = desPos == pos1 ? pos2 : pos1;
                 yield return new WaitForSeconds(0.3f);
