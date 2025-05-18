@@ -107,7 +107,7 @@ public class ChargeUI : MonoBehaviour
     void Player2UI()
     {
         //ÁÖ¸Ô UI
-        if(PushGlove2.active)
+        if(PushGlove2.activeSelf)
         {
             if (Input.GetKey(KeyCode.Slash))
             {
@@ -121,7 +121,7 @@ public class ChargeUI : MonoBehaviour
 
 
         //±×·¦ UI
-        if(Player2Grab.active)
+        if(Player2Grab.activeSelf)
         {
             if (Input.GetKey(KeyCode.Period))
             {
