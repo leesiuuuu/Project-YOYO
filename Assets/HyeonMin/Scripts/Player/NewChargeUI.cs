@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class NewChargeUI : MonoBehaviour
 {
+    Canvas canvas;
+
     NewPlayer1 player1;
     NewPlayer2 player2;
 
@@ -26,6 +28,8 @@ public class NewChargeUI : MonoBehaviour
     Vector3 offset = new Vector3(0, 120, 0);
     private void Awake()
     {
+        canvas = GameObject.Find("UI").GetComponent<Canvas>();
+
         player1 = GameObject.Find("Player1").GetComponent<NewPlayer1>();
         player2 = GameObject.Find("Player2").GetComponent<NewPlayer2>();
 
@@ -56,20 +60,24 @@ public class NewChargeUI : MonoBehaviour
 
     private void Update()
     {
-        if (Time.timeScale == 0)
-            return;
-
         Player1UI();
         Player2UI();
 
-        Vector3 player1Pos = Camera.main.WorldToScreenPoint(player1.transform.position);
-        Vector3 player2Pos = Camera.main.WorldToScreenPoint(player2.transform.position);
+        Vector3 screenPos1 = Camera.main.WorldToScreenPoint(player1.transform.position);
+        Vector3 screenPos2 = Camera.main.WorldToScreenPoint(player2.transform.position);
 
-        P1Gage.rectTransform.position = player1Pos + offset;
-        P1ChargeGage.fillAmount = player1.pushCharge / 35;
+        Vector2 uiPos1, uiPos2;
 
-        P2Gage.rectTransform.position = player2Pos + offset;
-        P2ChargeGage.fillAmount = player2.pushCharge / 35;
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos1 + offset, Camera.main, out uiPos1);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos2 + offset, Camera.main, out uiPos2);
+
+        P1Gage.rectTransform.localPosition = uiPos1;
+        P2Gage.rectTransform.localPosition = uiPos2;
+
+        P1ChargeGage.fillAmount = player1.pushCharge / 35f;
+        P2ChargeGage.fillAmount = player2.pushCharge / 35f;
     }
 
     void Player1UI()
