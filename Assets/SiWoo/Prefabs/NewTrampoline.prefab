@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3005490930513708679}
   - component: {fileID: 359814967108998072}
-  - component: {fileID: 6218956188207414988}
   - component: {fileID: 6192451349807683814}
+  - component: {fileID: 7189897363751423334}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 951346552, guid: 4be3b4fdddeb4fe43b40a0c9c9b70546, type: 3}
+  m_Sprite: {fileID: 1525853333, guid: 4be3b4fdddeb4fe43b40a0c9c9b70546, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,27 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6218956188207414988
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051564394715863345}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bb89ab8fcac128d4f98b03d2e625baa1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &6192451349807683814
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,6 +131,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.7844701}
   m_EdgeRadius: 0
+--- !u!95 &7189897363751423334
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051564394715863345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb89ab8fcac128d4f98b03d2e625baa1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4940741432942015973
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,3 +306,4 @@ MonoBehaviour:
   trampoline: {fileID: 0}
   JumpPower: 40
   clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  spriteAnimator: {fileID: 7189897363751423334}
