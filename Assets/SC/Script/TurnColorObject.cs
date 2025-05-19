@@ -13,6 +13,8 @@ public class TurnColorObject : MonoBehaviour
     public List<GameObject> whiteTileList;
     public List<GameObject> blackTileList;
 
+    private InvertEffect invertEffect;
+
     public Animator anim;
 
     [SerializeField] AudioClip clip;
@@ -22,6 +24,9 @@ public class TurnColorObject : MonoBehaviour
     private void Start()
     {
         colorType = ColorType.White;
+
+        invertEffect = FindObjectOfType<InvertEffect>();
+
         for (int i = 0; i < blackTileList.Count; i++)
         {
             blackTileList[i].SetActive(false);
@@ -38,6 +43,7 @@ public class TurnColorObject : MonoBehaviour
 
     void TurnColor()
     {
+        invertEffect.EffectOn();
         SoundManager.Instance.SFXPlay("TurnColor",clip);
 
         colorType = colorType == ColorType.White ? ColorType.Black : ColorType.White;
