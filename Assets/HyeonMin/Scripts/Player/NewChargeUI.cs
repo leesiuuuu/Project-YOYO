@@ -82,7 +82,7 @@ public class NewChargeUI : MonoBehaviour
 
     void Player1UI()
     {
-        //ÁÖ¸Ô UI
+        //ï¿½Ö¸ï¿½ UI
         if (PushGlove1.activeSelf)
         {
             if (!KeySetting.IsGamePad)
@@ -109,7 +109,7 @@ public class NewChargeUI : MonoBehaviour
             }
         }
 
-        //±×·¦ UI
+        //ï¿½×·ï¿½ UI
         if (Player1Grab.activeSelf)
         {
             if (!KeySetting.IsGamePad)
@@ -139,7 +139,7 @@ public class NewChargeUI : MonoBehaviour
 
     void Player2UI()
     {
-        //ÁÖ¸Ô UI
+        //ï¿½Ö¸ï¿½ UI
         if (PushGlove2.activeSelf)
         {
             if (!KeySetting.IsGamePad)
@@ -166,7 +166,7 @@ public class NewChargeUI : MonoBehaviour
             }
         }
 
-        //±×·¦ UI
+        //ï¿½×·ï¿½ UI
         if (Player2Grab.activeSelf)
         {
             if (!KeySetting.IsGamePad)
