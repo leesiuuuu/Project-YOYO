@@ -29,7 +29,10 @@ public class InvertEffect : MonoBehaviour
 	{
 		float size = _camera.orthographicSize;
 		transform.localScale = scale * (size / pervSize);
-		if (Input.GetKeyDown(KeyCode.Space) && invertEffect == null)
+	}
+	public void EffectOn()
+	{
+		if (invertEffect == null)
 		{
 			invertEffect = StartCoroutine(effect());
 		}
