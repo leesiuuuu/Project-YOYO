@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/SiWoo/Scene/StageScene.unity
     guid: 615e504ce9f3ce44e91e02db8c874783
   - enabled: 1
+    path: Assets/SC/Tutorial.unity
+    guid: ae7e637a74d360c46bfeb9c82946a6cc
+  - enabled: 1
     path: Assets/SC/Stage1.unity
     guid: 61bf6c6cab18587469c4c60ec34979b8
   - enabled: 1
