@@ -11,10 +11,10 @@ public class Trampoline : MonoBehaviour
     AudioClip clip;
 
     public Animator spriteAnimator;
-    private void Awake()
+/*    private void Awake()
     {
         trampoline = transform.parent.parent.gameObject;
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

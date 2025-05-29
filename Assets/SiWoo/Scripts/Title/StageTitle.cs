@@ -18,6 +18,8 @@ public class StageTitle : MonoBehaviour
 		string name = SceneManager.GetActiveScene().name;
 		switch (name)
 		{
+			case "Tutorial":
+				text.text = "튜토리얼\r\n<size=36><b>기본중의 기본"; break;
 			case "Stage1":
 				text.text = "스테이지 1\r\n<size=36><b>가벼운 시작"; break;
 			case "Stage2":

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public enum KeyAction
 {
-    LEFT,
+    LEFT = 0,
     RIGHT,
     Jump,
     PUSH,
@@ -116,4 +116,36 @@ public class KeyManager : MonoBehaviour
     {
         KeySetting.player2Keys[(KeyAction)index] = newKey;
     }
+
+    public KeyCode GetPlayer1Key(KeyAction keyAction)
+    {
+        if(KeySetting.player1Keys.Count > 0)
+        {
+            foreach(var key in KeySetting.player1Keys)
+            {
+                if (key.Key == keyAction) return key.Value;
+            }
+        }
+        else
+        {
+            return _player1DefaultKeys[(int)keyAction];
+        }
+        return KeyCode.None;
+    }
+
+	public KeyCode GetPlayer2Key(KeyAction keyAction)
+	{
+		if (KeySetting.player2Keys.Count > 0)
+		{
+			foreach (var key in KeySetting.player2Keys)
+			{
+				if (key.Key == keyAction) return key.Value;
+			}
+		}
+		else
+		{
+			return _player2DefaultKeys[(int)keyAction];
+		}
+		return KeyCode.None;
+	}
 }
