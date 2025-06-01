@@ -52,6 +52,8 @@ public class NewPlayer1 : MonoBehaviour
 
         glove.player1PushPower = pushCharge;
 
+        //PlayerPrefs로 받아올 수 있도록 수정함
+        // KeySetting.IsGamePad -> PlayerPrefs.GetInt("ControlMode") == 1
         if (!KeySetting.IsGamePad)
         {
             if (Input.GetKeyDown(KeySetting.player1Keys[KeyAction.PUSH]))

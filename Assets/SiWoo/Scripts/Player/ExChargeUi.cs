@@ -98,6 +98,15 @@ public class ExChargeUi : MonoBehaviour
 					if (Input.GetButton("Push1"))
 					{
 						PGage.gameObject.SetActive(true);
+						Vector3 scale = PGage.rectTransform.localScale;
+						if (transform.parent.localScale.x < 0)
+						{
+							PGage.rectTransform.localScale = new Vector3(-scale.y, scale.y, scale.z);
+						}
+						else
+						{
+							PGage.rectTransform.localScale = new Vector3(scale.y, scale.y, scale.z);
+						}
 					}
 					else
 					{
@@ -109,6 +118,15 @@ public class ExChargeUi : MonoBehaviour
 					if (Input.GetButton("Push2"))
 					{
 						PGage.gameObject.SetActive(true);
+						Vector3 scale = PGage.rectTransform.localScale;
+						if (transform.parent.localScale.x < 0)
+						{
+							PGage.rectTransform.localScale = new Vector3(-scale.y, scale.y, scale.z);
+						}
+						else
+						{
+							PGage.rectTransform.localScale = new Vector3(scale.y, scale.y, scale.z);
+						}
 					}
 					else
 					{
