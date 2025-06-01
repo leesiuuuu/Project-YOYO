@@ -7,9 +7,12 @@ public class Obstacle : MonoBehaviour
 {
     LevelLoader levelLoader;
 
+    private BGMScript bs;
+
     private void Start()
     {
         levelLoader = FindObjectOfType<LevelLoader>();
+        bs = FindObjectOfType<BGMScript>();
     }
 
 
@@ -18,11 +21,13 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.TryGetComponent<NewPlayer1>(out var player1))
         {
             player1.Die();
+            bs.FadeOut();
             levelLoader.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (collision.gameObject.TryGetComponent<NewPlayer2>(out var player2))
         {
             player2.Die();
+            bs.FadeOut();
             levelLoader.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

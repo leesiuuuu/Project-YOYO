@@ -9,7 +9,7 @@ public class NewPlayer1Grab : MonoBehaviour
     public Transform Target;
 
     public Vector3 addtargetPos = new Vector2(19f, 0);
-    Vector3 StartPos = new Vector2(0.64f, 0);
+    Vector3 StartPos = new Vector2(0.19f, -0.17f);
 
     public float moveSpeed;
 

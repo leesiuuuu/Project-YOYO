@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.PlayerSettings;
 
 public class StageTitle : MonoBehaviour
 {
@@ -20,6 +18,8 @@ public class StageTitle : MonoBehaviour
 		string name = SceneManager.GetActiveScene().name;
 		switch (name)
 		{
+			case "Tutorial":
+				text.text = "튜토리얼\r\n<size=36><b>기본중의 기본"; break;
 			case "Stage1":
 				text.text = "스테이지 1\r\n<size=36><b>가벼운 시작"; break;
 			case "Stage2":
@@ -40,7 +40,7 @@ public class StageTitle : MonoBehaviour
 
 		float ElapsedTime = 0f;
 		float Duration = 1f;
-		float WaitTime = 3f;
+		float WaitTime = 2f;
 		while(ElapsedTime < Duration)
 		{
 			ElapsedTime += Time.deltaTime;
@@ -74,7 +74,7 @@ public class StageTitle : MonoBehaviour
 
 		float ElapsedTime = 0f;
 		float Duration = 0.8f;
-		float WaitTime = 2.8f;
+		float WaitTime = 1.8f;
 
 		while (ElapsedTime < Duration)
 		{

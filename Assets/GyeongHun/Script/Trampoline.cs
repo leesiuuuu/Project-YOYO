@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Trampoline : MonoBehaviour
 {
@@ -9,10 +7,12 @@ public class Trampoline : MonoBehaviour
     public float JumpPower = 2;
     [SerializeField]
     AudioClip clip;
-    private void Awake()
+
+    public Animator spriteAnimator;
+/*    private void Awake()
     {
-            trampoline = transform.parent.parent.gameObject;
-    }
+        trampoline = transform.parent.parent.gameObject;
+    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,7 +20,8 @@ public class Trampoline : MonoBehaviour
         {
             SoundManager.Instance.SFXPlay("Trampoline",clip);
             rb.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
-            StartCoroutine(ScaleSet());
+            spriteAnimator.SetTrigger("Jump");
+            //StartCoroutine(ScaleSet());
         }
     }
 

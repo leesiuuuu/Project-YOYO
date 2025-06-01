@@ -6,6 +6,11 @@ public class LockFocus : MonoBehaviour
 {
 	private GameObject defaultSelected;
 
+	private void Start()
+	{
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+	}
 	void Update()
 	{
 		// 선택 상태 유지

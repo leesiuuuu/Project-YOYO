@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,12 +12,12 @@ public class SelectSceneScript : MonoBehaviour
 	private bool isSelected = false;
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
+/*		if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
 		{
 			bs.FadeOut();
 			levelLoader.LoadScene("Main");
-		}
-		if(Input.anyKey &&  !isSelected)
+		}*/
+		if(Input.anyKey && !isSelected)
 		{
 			btns[0].Select();
 			isSelected = true;
