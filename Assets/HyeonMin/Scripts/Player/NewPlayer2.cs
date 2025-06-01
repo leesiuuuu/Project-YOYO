@@ -96,7 +96,8 @@ public class NewPlayer2 : MonoBehaviour
             {
                 rigid.AddForce(Vector2.up * 15, ForceMode2D.Impulse);
                 jumpAble = false;
-                anim.Play("Jump");
+				SoundManager.Instance.SFXPlay("PlayerJump_2", player2Sounds[(int)PlayerSounds.Jump]);
+				anim.Play("Jump");
             }
 
             if (Input.GetButtonDown("Push2"))
@@ -122,7 +123,9 @@ public class NewPlayer2 : MonoBehaviour
 
                 isCharging = false;
                 Push = true;
-            }
+                SoundManager.Instance.SFXPlay("PlayerPush_2", player2Sounds[(int)PlayerSounds.Push]);
+
+			}
         }
     }
 

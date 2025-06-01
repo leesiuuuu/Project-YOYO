@@ -29,7 +29,7 @@ public class TutorialAppear : MonoBehaviour
 	{
 		if (!isOnlyOne)
 		{
-			if (KeySetting.IsGamePad)
+			if (PlayerPrefs.GetInt("ControlMode") == 1)
 			{
 				Keyboard.alpha = 0;
 				AlphaByDistance(GamePad);

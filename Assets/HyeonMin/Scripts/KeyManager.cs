@@ -73,6 +73,9 @@ public class KeyManager : MonoBehaviour
             _checkSelectKeyUI = FindAnyObjectByType<UI_CheckSelectKey>();
         if (CheckSelectPanel == null)
             CheckSelectPanel = GameObject.Find("NewKeySeleteCanvas");
+
+        if (PlayerPrefs.HasKey("ControlMode"))
+            KeySetting.IsGamePad = PlayerPrefs.GetInt("ControlMode") == 1 ? true : false;
     }
 
     private void OnEnable()
