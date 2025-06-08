@@ -87,33 +87,29 @@
 
 ---
 
-스테이지는 총 3개이다.
+총 6개의 맵이 존재한다.
 
-각 스테이지는 3개의 기능 중 하나를 사용해 클리어하는 것을 목표로 한다.
-
-한 스테이지당 5개의 맵이 존재한다.
-
-1스테이지는 튜토리얼 맵으로 구성한다.
+> 튜토리얼 맵 하나, 기본 맵 5개
 
 - 1스테이지
 
-<img width="493" alt="33" src="https://github.com/user-attachments/assets/50d3dc59-df93-424d-9db6-deaf8cb42e80" />
-<img width="493" alt="33" src="https://github.com/user-attachments/assets/01d30832-ebf6-468c-a9ed-35e3f2f430ba" />
+![image](https://github.com/user-attachments/assets/50d3dc59-df93-424d-9db6-deaf8cb42e80)
 
 - 2스테이지
-<img width="493" alt="33" src="https://github.com/user-attachments/assets/d6b34995-be6b-41bc-9a56-e2e008310e3f" />
+
+![image](https://github.com/user-attachments/assets/d6b34995-be6b-41bc-9a56-e2e008310e3f)
 
 - 3스테이지
 
-<img width="638" alt="image4" src="https://github.com/user-attachments/assets/2d00d39f-7f2e-4dd2-94cd-2529d175b1f0" />
+![image](https://github.com/user-attachments/assets/2d00d39f-7f2e-4dd2-94cd-2529d175b1f0)
 
 - 4스테이지
 
-![image5](https://github.com/user-attachments/assets/36d8bd3e-da47-4110-a93f-62cdb3781393)
+![image](https://github.com/user-attachments/assets/36d8bd3e-da47-4110-a93f-62cdb3781393)
 
 
 - 5스테이지
-<img width="626" alt="image6" src="https://github.com/user-attachments/assets/979363a9-b5f4-4dba-a33d-316045d4d1b7" />
+![image](https://github.com/user-attachments/assets/979363a9-b5f4-4dba-a33d-316045d4d1b7)
 
 
 ## 2.게임 컨텐츠
