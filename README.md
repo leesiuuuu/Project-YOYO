@@ -183,10 +183,14 @@ ex)
 
 ### 사용 리소스 출처
 
-https://assetstore.unity.com/packages/audio/music/8bit-music-album-051321-196147?srsltid=AfmBOorUaI9I9A3xIVTbJrYxmE4YKiXcARvwuUVgmaYW7bfbbCA8MfEC
+[음악 에셋 1](https://assetstore.unity.com/packages/audio/music/8bit-music-album-051321-196147?srsltid=AfmBOorUaI9I9A3xIVTbJrYxmE4YKiXcARvwuUVgmaYW7bfbbCA8MfEC)
 
-https://assetstore.unity.com/packages/audio/music/8bit-music-062022-225623
+[음악 에셋 2](https://assetstore.unity.com/packages/audio/music/8bit-music-062022-225623)
 
-https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116?srsltid=AfmBOopJ7WwyLVu7pqzrAfKBiJYI2TC9F8KAzT2ko1LZ553kCIdCbzqX
+[효과음 에셋 1](https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116?srsltid=AfmBOopJ7WwyLVu7pqzrAfKBiJYI2TC9F8KAzT2ko1LZ553kCIdCbzqX)
 
-https://www.kenney.nl/assets/ui-audio
+[효과음 에셋 2](https://www.kenney.nl/assets/ui-audio)
+
+[그래픽 에셋](https://kenney.nl/assets/1-bit-platformer-pack)
+
+[버튼 그래피 에셋](https://kenney.nl/assets/input-prompts-pixel-16)
